@@ -1,0 +1,284 @@
+@media screen and (min-width:0px) {
+
+    body {
+        font-family: "Raleway";
+    }
+
+    .menu {
+        background-color: #ffffff;
+        height: 9vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .logo {
+        width: 30vw;
+        order: 1;
+    }
+
+    .buscador {
+        order: 3;
+    }
+
+    .input {
+        display: none;
+    }
+
+    .buscar {
+        background: url(../img/Lupa_oscura.svg);
+        height: 16px;
+        width: 16px;
+        border: none;
+        background-color: #FFFFFF;
+    }
+
+    .empty_button {
+        border: 1px solid #2A7AE4;
+        background-color: #FFFFFF;
+        width: 32vw;
+        height: 5vh;
+        order: 2;
+        color: #2A7AE4;
+    }
+
+    .seccion_principal {
+        background-color: #E5E5E5;
+        height: auto;
+    }
+
+    .footer .lista {
+        background-color: #EAF2FD;
+        text-align: center;
+    }
+
+    .footer_logo {
+        width: 50vw;
+        margin: 5% 0 2% 0;
+    }
+
+    .footer li {
+        padding: 2%;
+        color: #464646;
+    }
+
+    .contacto {
+        text-align: left;
+        background-color: #EAF2FD;
+        padding-top: 1%;
+    }
+
+    .contacto p {
+        text-align: left;
+        color: #464646;
+        font-weight: 700;
+        margin: 8% 0 0 4%;
+        font-size: 1rem;
+    }
+
+    .contacto input, .contacto textarea {
+        display: inline;
+        width: 90vw;
+        border: none;
+        margin-top: 3%;
+        padding-left: 2%;
+        font-size: 0.9rem;
+        margin-left: 3.5vw;
+    }
+
+    .input_nombre::placeholder, .input_mensaje::placeholder {
+        vertical-align: top;
+        color: #A2A2A2;
+        font-family: "Raleway";
+    }
+
+    .input_nombre {
+        height: 5vh;
+    }
+
+    .input_mensaje {
+        height: 8vh;
+        padding-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    .button {
+        border: none;
+        background-color: #2A7AE4;
+        width: 32vw;
+        height: 5vh;
+        color: #FFFFFF;
+    }
+
+    form .button {
+        margin-left: 3.5vw;
+        margin-bottom: 5%;
+    }
+
+    .copyright {
+        padding: 7% 0;
+        text-align: center;
+        color: #464646;
+        font-size: 1rem;
+        background-color: #ffffff;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 480px) {
+
+    .menu {
+        justify-content: left;
+    }
+
+    .logo {
+        width: 15vw;
+        margin: 2%;
+    }
+
+    .buscador {
+        order: 2;
+        margin: 3%;
+        width: 250px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .input {
+        display: flex;
+        background-color: #F5F5F5;
+        border-radius: 20px 0 0 20px;
+        width: 210px;
+        height: 40px;
+        border: none;
+        padding-left: 5%;
+    }
+
+    .input::placeholder {
+        color: #A2A2A2;
+    }
+
+    .buscar {
+        background-image: url(../img/Lupa_clara.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-color: #F5F5F5;
+        width: 40px;
+        height: 40px;
+        border-radius: 0 20px 20px 0;
+    }
+
+    .empty_button {
+        width: 18vw;
+        order: 3;
+        margin-left: auto;
+        margin-right: 2%;
+    }
+
+    .footer {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .footer .lista {
+        width: 38vw;
+        text-align: left;
+        font-size: 0.8rem;
+        padding-left: 2vw;
+        padding-bottom: 2%;
+    }
+
+    .footer_logo {
+        width: 25vw;
+        padding-top: 5%;
+    }
+
+    .footer li {
+        padding: 4%;
+    }
+
+    .contacto {
+        width: 60vw;
+    }
+
+    .button {
+        width: 18vw;
+        font-size: 0.7rem;
+    }
+
+    .contacto input, .contacto textarea {
+        width: 85%;
+    }
+
+    .copyright {
+        padding: 4% 0;
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .menu {
+        height: 12vh;
+    }
+
+    .logo {
+        width: 12vw;
+        margin: 6%;
+        margin-right: 4%;
+    }
+
+    .buscador {
+        width: 280px;
+        margin-left: 0;
+    }
+
+    .input {
+        width: 250px;
+        height: 30px;
+    }
+
+    .buscar {
+        width: 30px;
+        height: 30px;
+    }
+
+    .empty_button {
+        width: 12vw;
+        height: 6vh;
+        margin-right: 6%;
+    }
+
+    .footer .lista {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 30vw;
+        padding-left: 10vw;
+        padding-right: 5vw;
+    }
+
+    .footer_logo {
+        width: 10vw;
+        align-self: flex-start;
+        padding-top: 10%;
+    }
+
+    .footer li {
+        padding: 6% 0 6% 0;
+    }
+
+    .button {
+        width: 12vw;
+    }
+
+    .contacto {
+        width: 45vw;
+        padding-right: 10vw;
+    }
+
+    .copyright {
+        font-size: 0.7rem;
+    }
+}
