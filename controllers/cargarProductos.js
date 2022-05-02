@@ -11,6 +11,7 @@ const crearNuevaLinea = (id, nombre, precio, imagen) => {
   linea.innerHTML = contenido;
   const img = linea.querySelector(`#img${id}`);
   img.background = `url(${imagen}) center / cover no-repeat`;
+  console.log(imagen);
   return linea;
 };
 
@@ -19,7 +20,6 @@ productoServices
   .then((data) => {
     data.forEach(({ id, seccion, nombre, precio, imagen }) => {
       const section = document.querySelector(`[data-seccion${seccion.id}]`);
-      console.log(seccion);
       const nuevaLinea = crearNuevaLinea(id, nombre, precio, imagen);
       section.appendChild(nuevaLinea);
     });

@@ -76,7 +76,7 @@
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
-      "imagen": "../img/StarWars/c_producto1.jpg"
+      "imagen": "../img/Consolas/c_producto1.jpg"
     },
     {
       "id": 8,
@@ -87,7 +87,7 @@
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
-      "imagen": "../img/StarWars/c_producto2.jpg"
+      "imagen": "../img/Consolas/c_producto2.jpg"
     },
     {
       "id": 9,
@@ -98,7 +98,7 @@
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
-      "imagen": "../img/StarWars/c_producto3.jpg"
+      "imagen": "../img/Consolas/c_producto3.jpg"
     },
     {
       "id": 10,
@@ -109,7 +109,7 @@
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
-      "imagen": "../img/StarWars/c_producto4.jpg"
+      "imagen": "../img/Consolas/c_producto4.jpg"
     },
     {
       "id": 11,
@@ -120,7 +120,7 @@
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
-      "imagen": "../img/StarWars/c_producto5.jpg"
+      "imagen": "../img/Consolas/c_producto5.jpg"
     },
     {
       "id": 12,
@@ -131,7 +131,7 @@
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
-      "imagen": "../img/StarWars/c_producto6.jpg"
+      "imagen": "../img/Consolas/c_producto6.jpg"
     },
     {
       "id": 13,
@@ -142,7 +142,7 @@
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
-      "imagen": "../img/StarWars/d_producto1.jpg"
+      "imagen": "../img/Diversos/d_producto1.jpg"
     },
     {
       "id": 14,
@@ -153,7 +153,7 @@
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
-      "imagen": "../img/StarWars/d_producto2.jpg"
+      "imagen": "../img/Diversos/d_producto2.jpg"
     },
     {
       "id": 15,
@@ -164,7 +164,7 @@
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
-      "imagen": "../img/StarWars/d_producto3.jpg"
+      "imagen": "../img/Diversos/d_producto3.jpg"
     },
     {
       "id": 16,
@@ -175,7 +175,7 @@
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
-      "imagen": "../img/StarWars/d_producto4.jpg"
+      "imagen": "../img/Diversos/d_producto4.jpg"
     },
     {
       "id": 17,
@@ -186,7 +186,7 @@
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
-      "imagen": "../img/StarWars/d_producto5.jpg"
+      "imagen": "../img/Diversos/d_producto5.jpg"
     },
     {
       "id": 18,
@@ -197,7 +197,7 @@
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
-      "imagen": "../img/StarWars/d_producto6.jpg"
+      "imagen": "../img/Diversos/d_producto6.jpg"
     }
   ]
 }
