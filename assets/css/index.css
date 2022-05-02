@@ -71,30 +71,6 @@
         height: 50vw;
     }
 
-    #img1 {
-        background: url(../img/StarWars/sw_producto1.jpg) center / cover no-repeat;
-    }
-
-    #img2 {
-        background: url(../img/StarWars/sw_producto2.jpg) center / cover no-repeat;
-    }
-
-    #img3 {
-        background: url(../img/StarWars/sw_producto3.jpg) center / cover no-repeat;
-    }
-
-    #img4 {
-        background: url(../img/StarWars/sw_producto4.jpg) center / cover no-repeat;
-    }
-
-    #img5 {
-        background: url(../img/StarWars/sw_producto5.jpg) center / cover no-repeat;
-    }
-
-    #img6 {
-        background: url(../img/StarWars/sw_producto6.jpg) center / cover no-repeat;
-    }
-
     .producto:nth-child(5) {
         display: none;
     }
