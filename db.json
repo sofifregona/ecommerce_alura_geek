@@ -1,0 +1,149 @@
+{
+  "users": [],
+  "products": [
+    {
+      "id": 1,
+      "seccion": "Star Wars",
+      "nombre": "Producto XYZ",
+      "descripcion": "...Descripción...",
+      "precio": "$60.0",
+      "imagen": "../img/StarWars/sw_producto1.jpg"
+    },
+    {
+      "id": 2,
+      "seccion": "Star Wars",
+      "nombre": "Producto XYZ",
+      "descripcion": "...Descripción...",
+      "precio": "$60.0",
+      "imagen": "../img/StarWars/sw_producto2.jpg"
+    },
+    {
+      "id": 3,
+      "seccion": "Star Wars",
+      "nombre": "Producto XYZ",
+      "descripcion": "...Descripción...",
+      "precio": "$60.0",
+      "imagen": "../img/StarWars/sw_producto3.jpg"
+    },
+    {
+      "id": 4,
+      "seccion": "Star Wars",
+      "nombre": "Producto XYZ",
+      "descripcion": "...Descripción...",
+      "precio": "$60.0",
+      "imagen": "../img/StarWars/sw_producto4.jpg"
+    },
+    {
+      "id": 5,
+      "seccion": "Star Wars",
+      "nombre": "Producto XYZ",
+      "descripcion": "...Descripción...",
+      "precio": "$60.0",
+      "imagen": "../img/StarWars/sw_producto5.jpg"
+    },
+    {
+      "id": 6,
+      "seccion": "Star Wars",
+      "nombre": "Producto XYZ",
+      "descripcion": "...Descripción...",
+      "precio": "$60.0",
+      "imagen": "../img/StarWars/sw_producto6.jpg"
+    },
+    {
+      "id": 7,
+      "seccion": "Consolas",
+      "nombre": "Producto XYZ",
+      "descripcion": "...Descripción...",
+      "precio": "$60.0",
+      "imagen": "../img/StarWars/c_producto1.jpg"
+    },
+    {
+      "id": 8,
+      "seccion": "Consolas",
+      "nombre": "Producto XYZ",
+      "descripcion": "...Descripción...",
+      "precio": "$60.0",
+      "imagen": "../img/StarWars/c_producto2.jpg"
+    },
+    {
+      "id": 9,
+      "seccion": "Consolas",
+      "nombre": "Producto XYZ",
+      "descripcion": "...Descripción...",
+      "precio": "$60.0",
+      "imagen": "../img/StarWars/c_producto3.jpg"
+    },
+    {
+      "id": 10,
+      "seccion": "Consolas",
+      "nombre": "Producto XYZ",
+      "descripcion": "...Descripción...",
+      "precio": "$60.0",
+      "imagen": "../img/StarWars/c_producto4.jpg"
+    },
+    {
+      "id": 11,
+      "seccion": "Consolas",
+      "nombre": "Producto XYZ",
+      "descripcion": "...Descripción...",
+      "precio": "$60.0",
+      "imagen": "../img/StarWars/c_producto5.jpg"
+    },
+    {
+      "id": 12,
+      "seccion": "Consolas",
+      "nombre": "Producto XYZ",
+      "descripcion": "...Descripción...",
+      "precio": "$60.0",
+      "imagen": "../img/StarWars/c_producto6.jpg"
+    },
+    {
+      "id": 13,
+      "seccion": "Diversos",
+      "nombre": "Producto XYZ",
+      "descripcion": "...Descripción...",
+      "precio": "$60.0",
+      "imagen": "../img/StarWars/d_producto1.jpg"
+    },
+    {
+      "id": 14,
+      "seccion": "Diversos",
+      "nombre": "Producto XYZ",
+      "descripcion": "...Descripción...",
+      "precio": "$60.0",
+      "imagen": "../img/StarWars/d_producto2.jpg"
+    },
+    {
+      "id": 15,
+      "seccion": "Diversos",
+      "nombre": "Producto XYZ",
+      "descripcion": "...Descripción...",
+      "precio": "$60.0",
+      "imagen": "../img/StarWars/d_producto3.jpg"
+    },
+    {
+      "id": 16,
+      "seccion": "Diversos",
+      "nombre": "Producto XYZ",
+      "descripcion": "...Descripción...",
+      "precio": "$60.0",
+      "imagen": "../img/StarWars/d_producto4.jpg"
+    },
+    {
+      "id": 17,
+      "seccion": "Diversos",
+      "nombre": "Producto XYZ",
+      "descripcion": "...Descripción...",
+      "precio": "$60.0",
+      "imagen": "../img/StarWars/d_producto5.jpg"
+    },
+    {
+      "id": 18,
+      "seccion": "Diversos",
+      "nombre": "Producto XYZ",
+      "descripcion": "...Descripción...",
+      "precio": "$60.0",
+      "imagen": "../img/StarWars/d_producto6.jpg"
+    }
+  ]
+}
