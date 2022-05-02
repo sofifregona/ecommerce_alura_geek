@@ -3,7 +3,10 @@
   "products": [
     {
       "id": 1,
-      "seccion": "Star Wars",
+      "seccion": {
+        "id": 1,
+        "nombre": "Star Wars"
+      },
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
@@ -11,7 +14,10 @@
     },
     {
       "id": 2,
-      "seccion": "Star Wars",
+      "seccion": {
+        "id": 1,
+        "nombre": "Star Wars"
+      },
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
@@ -19,7 +25,10 @@
     },
     {
       "id": 3,
-      "seccion": "Star Wars",
+      "seccion": {
+        "id": 1,
+        "nombre": "Star Wars"
+      },
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
@@ -27,7 +36,10 @@
     },
     {
       "id": 4,
-      "seccion": "Star Wars",
+      "seccion": {
+        "id": 1,
+        "nombre": "Star Wars"
+      },
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
@@ -35,7 +47,10 @@
     },
     {
       "id": 5,
-      "seccion": "Star Wars",
+      "seccion": {
+        "id": 1,
+        "nombre": "Star Wars"
+      },
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
@@ -43,7 +58,10 @@
     },
     {
       "id": 6,
-      "seccion": "Star Wars",
+      "seccion": {
+        "id": 1,
+        "nombre": "Star Wars"
+      },
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
@@ -51,7 +69,10 @@
     },
     {
       "id": 7,
-      "seccion": "Consolas",
+      "seccion": {
+        "id": 2,
+        "nombre": "Consolas"
+      },
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
@@ -59,7 +80,10 @@
     },
     {
       "id": 8,
-      "seccion": "Consolas",
+      "seccion": {
+        "id": 2,
+        "nombre": "Consolas"
+      },
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
@@ -67,7 +91,10 @@
     },
     {
       "id": 9,
-      "seccion": "Consolas",
+      "seccion": {
+        "id": 2,
+        "nombre": "Consolas"
+      },
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
@@ -75,7 +102,10 @@
     },
     {
       "id": 10,
-      "seccion": "Consolas",
+      "seccion": {
+        "id": 2,
+        "nombre": "Consolas"
+      },
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
@@ -83,7 +113,10 @@
     },
     {
       "id": 11,
-      "seccion": "Consolas",
+      "seccion": {
+        "id": 2,
+        "nombre": "Consolas"
+      },
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
@@ -91,7 +124,10 @@
     },
     {
       "id": 12,
-      "seccion": "Consolas",
+      "seccion": {
+        "id": 2,
+        "nombre": "Consolas"
+      },
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
@@ -99,7 +135,10 @@
     },
     {
       "id": 13,
-      "seccion": "Diversos",
+      "seccion": {
+        "id": 3,
+        "nombre": "Diversos"
+      },
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
@@ -107,7 +146,10 @@
     },
     {
       "id": 14,
-      "seccion": "Diversos",
+      "seccion": {
+        "id": 3,
+        "nombre": "Diversos"
+      },
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
@@ -115,7 +157,10 @@
     },
     {
       "id": 15,
-      "seccion": "Diversos",
+      "seccion": {
+        "id": 3,
+        "nombre": "Diversos"
+      },
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
@@ -123,7 +168,10 @@
     },
     {
       "id": 16,
-      "seccion": "Diversos",
+      "seccion": {
+        "id": 3,
+        "nombre": "Diversos"
+      },
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
@@ -131,7 +179,10 @@
     },
     {
       "id": 17,
-      "seccion": "Diversos",
+      "seccion": {
+        "id": 3,
+        "nombre": "Diversos"
+      },
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
@@ -139,7 +190,10 @@
     },
     {
       "id": 18,
-      "seccion": "Diversos",
+      "seccion": {
+        "id": 3,
+        "nombre": "Diversos"
+      },
       "nombre": "Producto XYZ",
       "descripcion": "...Descripción...",
       "precio": "$60.0",
