@@ -1,0 +1,113 @@
+@media screen and (min-width:0px) {
+    form p {
+        color: #555555;
+        text-align: left;
+        font-size: 0.9rem;
+        margin-left: 5vw;
+    }
+
+    .titulo {
+        color: #555555;
+        text-align: center;
+        padding-top: 10%;
+        padding-bottom: 8%;
+        font-size: 1.2rem;
+        font-weight: 500;
+        width: 100%;
+    }
+
+    .formulario {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .input_form {
+        width: 90vw;
+        height: 10vw;
+        margin: auto;
+        margin-bottom: 5vw;
+        margin-top: 2vw;
+        max-width: 500px;
+    }
+
+    .mensajes_de_errores {
+        width: 100%;
+        padding-top: 2%;
+        padding-bottom: 3%;
+        text-align: center;
+    }
+
+    span {
+        font-size: 0.7rem;
+        color: #ff0000;
+    }
+
+    .input-container--invalid {
+        margin-bottom: 0.5rem;
+        border: 1.5px solid red;
+    }
+
+    .button {
+        margin-top: 2vw;
+        margin-left: 4vw;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    form p {
+        width: 70px;
+        padding-right: 10px;
+        margin-left: 5px;
+        text-align: left;
+        font-size: 0.8rem;
+    }
+
+    .titulo {
+        font-size: 1.3rem;
+        font-weight: 500;
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+
+    .formulario {
+        display: flex;
+        flex-wrap: wrap;
+        width: 500px;
+        height: auto;
+        justify-content: flex-start;
+        margin: auto;
+        align-items: center;
+    }
+
+    .input_form {
+        max-width: 350px;
+        height: 35px;
+        margin: 5px;
+    }
+
+    .provincia {
+        width: 140px;
+    }
+
+    .codigo_postal {
+        width: 102px;
+    }
+
+    .div_btn_form {
+        width: 100%;
+        text-align: center;
+    }
+
+    .mensajes_de_errores {
+        padding-bottom: 0;
+    }
+
+    span {
+        font-size: 0.8rem;
+    }
+
+    .button {
+        margin-left: 0;
+    }
+}

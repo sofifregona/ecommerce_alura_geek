@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>AluraGeek</title>
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/registro.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="menu">
+        <div class="logo">
+          <a href="home.html"
+            ><img class="logo_imagen" src="assets/img/Logo.svg"
+          /></a>
+        </div>
+        <div class="buscador">
+          <input
+            class="input_buscador"
+            placeholder="¿Qué deseas buscar?"
+            type="search"
+          />
+          <button class="buscar"></button>
+        </div>
+        <div class="div_button">
+          <button class="empty_button">Menú</button>
+          <nav class="menu_desplegable">
+            <ul>
+              <li>
+                <button class="signIn">
+                  <a href="signin.html">Sign in</a>
+                </button>
+              </li>
+              <li><button class="logIn">Login</button></li>
+              <li><button class="modo">Modo oscuro</button></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="seccion_principal">
+        <h3 class="titulo">Registro</h3>
+        <form class="formulario">
+          <p>Nombre*</p>
+          <input
+            class="input input_form"
+            id="nombre"
+            type="text"
+            data-tipo="nombre"
+            pattern="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]{3,}"
+            required
+          />
+          <p>Username*</p>
+          <input
+            class="input input_form"
+            id="username"
+            type="text"
+            data-tipo="username"
+            pattern="\w{8,20}"
+            required
+          />
+          <p>E-mail*</p>
+          <input
+            class="input input_form"
+            id="email"
+            type="text"
+            data-tipo="email"
+            pattern="[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}"
+            required
+          />
+          <p>Password*</p>
+          <input
+            class="input input_form"
+            id="password"
+            type="password"
+            data-tipo="password"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[ !@#$%^&*_=+-]).{6,12}$"
+            required
+          />
+          <p>Repita la password*</p>
+          <input
+            class="input input_form"
+            id="secondpassword"
+            type="password"
+            data-tipo="secondpassword"
+            required
+          />
+          <p>Teléfono</p>
+          <input
+            class="input input_form"
+            id="telefono"
+            type="tel"
+            data-tipo="telefono"
+          />
+          <p>Domicilio</p>
+          <input
+            class="input input_form"
+            id="domicilio"
+            type="text"
+            data-tipo="domicilio"
+          />
+          <p>Ciudad</p>
+          <input
+            class="input input_form"
+            id="ciudad"
+            type="text"
+            data-tipo="ciudad"
+          />
+          <p>Estado o Provincia</p>
+          <input
+            class="input input_form provincia"
+            id="provincia"
+            type="text"
+            data-tipo="provincia"
+          />
+          <p>Código postal</p>
+          <input
+            class="input input_form codigo_postal"
+            id="cp"
+            type="text"
+            data-tipo="cp"
+          />
+          <p>País</p>
+          <input
+            class="input input_form"
+            id="pais"
+            type="text"
+            data-tipo="pais"
+          />
+          <p>(*) Campos obligatorios</p>
+          <div class="mensajes_de_errores"></div>
+        </form>
+        <div class="div_btn_form">
+          <button class="button button_form">Registrarse</button>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="lista">
+        <img class="footer_logo" src="assets/img/Logo.svg" />
+        <ul class="footer_lista">
+          <li class="footer_lista_elemento">Quiénes somos</li>
+          <li class="footer_lista_elemento">Política de privacidad</li>
+          <li class="footer_lista_elemento">Programa de fidelidad</li>
+          <li class="footer_lista_elemento">Nuestras tiendas</li>
+          <li class="footer_lista_elemento">Quiero ser franquiciado</li>
+          <li class="footer_lista_elemento">Anuncie aquí</li>
+        </ul>
+      </div>
+      <form class="contacto">
+        <p class="contacto_titulo">Hable con nosotros</p>
+        <input class="input input_nombre" placeholder="Nombre" type="text" />
+        <textarea
+          class="input input_mensaje"
+          placeholder="Mensaje"
+          type="text"
+        ></textarea>
+        <button class="button">Enviar mensaje</button>
+      </form>
+      <div class="copyright">
+        <p>María Sofía Fregona</p>
+        <p>copyright 2022</p>
+      </div>
+    </footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"
+      integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="module" src="controllers/buttonsMenu.js"></script>
+    <script type="module" src="controllers/encriptador.js"></script>
+    <script type="module" src="controllers/formularioRegistro.js"></script>
+  </body>
+</html>

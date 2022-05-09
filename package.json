@@ -1,6 +1,8 @@
 {
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "json-server": "^0.17.0",
-    "node": "^17.7.2"
+    "node": "^17.7.2",
+    "uuid": "^8.3.2"
   }
 }
