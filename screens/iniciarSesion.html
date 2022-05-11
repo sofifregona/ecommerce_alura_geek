@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>AluraGeek</title>
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/login.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="menu">
+        <div class="logo">
+          <a href="../index.html"
+            ><img class="logo_imagen" src="../assets/img/Logo.svg"
+          /></a>
+        </div>
+        <div class="buscador">
+          <input
+            class="input_buscador"
+            placeholder="¿Qué deseas buscar?"
+            type="search"
+          />
+          <button class="buscar"></button>
+        </div>
+        <div class="div_button">
+          <button class="empty_button">Menú</button>
+          <nav class="menu_desplegable">
+            <ul>
+              <li>
+                <button class="signIn">
+                  <a href="registrarse.html">Registrarse</a>
+                </button>
+              </li>
+              <li>
+                <button class="logIn">
+                  <a href="iniciarSesion.html">Iniciar sesión</a>
+                </button>
+              </li>
+              <li>
+                <button class="logOut">
+                  <a href="/index.html">Cerrar sesión</a>
+                </button>
+              </li>
+              <li>
+                <button class="productos">
+                  <a href="administrador.html">Productos</a>
+                </button>
+              </li>
+              <li>
+                <button class="carrito">
+                  <a href="carrito.html">Carrito</a>
+                </button>
+              </li>
+              <li><button class="modo"></button></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="seccion_principal">
+        <h3 class="titulo">Iniciar sesión</h3>
+        <form class="formulario">
+          <p>Username</p>
+          <input class="input input_form" id="username" type="text" required />
+          <p>Password</p>
+          <input
+            class="input input_form"
+            id="password"
+            type="password"
+            required
+          />
+          <div class="mensajes_de_errores"></div>
+        </form>
+        <div class="div_btn_form">
+          <button class="button button_form">Ingresar</button>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="lista">
+        <img class="footer_logo" src="../assets/img/Logo.svg" />
+        <ul class="footer_lista">
+          <li class="footer_lista_elemento">Quiénes somos</li>
+          <li class="footer_lista_elemento">Política de privacidad</li>
+          <li class="footer_lista_elemento">Programa de fidelidad</li>
+          <li class="footer_lista_elemento">Nuestras tiendas</li>
+          <li class="footer_lista_elemento">Quiero ser franquiciado</li>
+          <li class="footer_lista_elemento">Anuncie aquí</li>
+        </ul>
+      </div>
+      <form class="contacto">
+        <p class="contacto_titulo">Hable con nosotros</p>
+        <input class="input input_nombre" placeholder="Nombre" type="text" />
+        <textarea
+          class="input input_mensaje"
+          placeholder="Mensaje"
+          type="text"
+        ></textarea>
+        <button class="button">Enviar mensaje</button>
+      </form>
+      <div class="copyright">
+        <p>María Sofía Fregona</p>
+        <p>copyright 2022</p>
+      </div>
+    </footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"
+      integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="module" src="../controllers/buttonsMenu.js"></script>
+    <script type="module" src="../controllers/encriptador.js"></script>
+    <script type="module" src="../controllers/formularioIngresar.js"></script>
+  </body>
+</html>

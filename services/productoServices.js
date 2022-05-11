@@ -1,6 +1,6 @@
 const listaProductos = () => {
   return fetch(
-    "https://ecommerce-challenge-heroku.herokuapp.com/products"
+    "https://ecommerce-alurageek-challenge.herokuapp.com/seccion"
   ).then((respuesta) => respuesta.json());
 };
 

@@ -1,15 +1,8 @@
 @media screen and (min-width:0px) {
-    form p {
-        color: #555555;
-        text-align: left;
-        font-size: 0.9rem;
-        margin-left: 5vw;
-    }
-
     .titulo {
         color: #555555;
         text-align: center;
-        padding-top: 10%;
+        padding-top: 20%;
         padding-bottom: 8%;
         font-size: 1.2rem;
         font-weight: 700;
@@ -22,11 +15,18 @@
         text-align: center;
     }
 
+    form p {
+        color: #555555;
+        text-align: left;
+        font-size: 0.9rem;
+        margin-left: 5vw;
+    }
+
     .input_form {
         width: 90vw;
         height: 10vw;
         margin: auto;
-        margin-bottom: 5vw;
+        margin-bottom: 2vw;
         margin-top: 2vw;
         max-width: 500px;
     }
@@ -48,25 +48,20 @@
         border: 1.5px solid red;
     }
 
-    .button {
-        margin-top: 2vw;
-        margin-left: 4vw;
+    .div_btn_form {
+        padding-bottom: 20%;
+        text-align: center;
+    }
+
+    .button_form {
+        height: 12vw;
     }
 }
 
 @media screen and (min-width: 480px) {
-    form p {
-        width: 80px;
-        padding-right: 10px;
-        margin-left: 5px;
-        text-align: left;
-        font-size: 0.8rem;
-    }
-
     .titulo {
         font-size: 1.3rem;
-        font-weight: 700;
-        padding-top: 50px;
+        padding-top: 10%;
         padding-bottom: 30px;
     }
 
@@ -80,34 +75,32 @@
         align-items: center;
     }
 
+    form p {
+        width: 80px;
+        padding-right: 10px;
+        margin-left: 5px;
+        text-align: left;
+        font-size: 1rem;
+    }
+
     .input_form {
         max-width: 350px;
         height: 35px;
         margin: 5px;
     }
 
-    .provincia {
-        width: 140px;
-    }
-
-    .codigo_postal {
-        width: 93px;
-    }
-
     .div_btn_form {
         width: 100%;
         text-align: center;
-    }
-
-    .mensajes_de_errores {
-        padding-bottom: 0;
+        padding-bottom: 8%;
     }
 
     span {
         font-size: 0.8rem;
     }
 
-    .button {
+    .button_form {
+        height: 45px;
         margin-left: 0;
     }
 }

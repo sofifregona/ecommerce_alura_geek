@@ -1,0 +1,32 @@
+@media screen and (min-width:0px) {
+    .producto_principal {
+        width: 100%;
+    }
+
+    .imagen_producto {
+        width: 100%;
+        height: 70vw;
+    }
+
+    .producto_informacion {
+        padding: 4%;
+    }
+
+    .titulo_producto {
+        color: #555555;
+        font-size: 1.3rem;
+        font-weight: 500;
+        padding-bottom: 4%;
+    }
+
+    .precio_producto {
+        color: #555555;
+        font-size: 1.2rem;
+        font-weight: 700;
+        padding-bottom: 4%;
+    }
+}
+
+@media screen and (min-width: 480px) {}
+
+@media screen and (min-width: 768px) {}

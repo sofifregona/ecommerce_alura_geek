@@ -1,8 +1,10 @@
 import { estilarPagina } from "./estilarPagina.js";
+import { loginServices } from "../services/loginServices.js";
 const button = document.querySelector(".empty_button");
 const menuDesplegable = document.querySelector(".menu_desplegable");
 const body = document.querySelector("body");
 const modo = document.querySelector(".modo");
+const logout = document.querySelector(".logOut");
 
 button.addEventListener("click", () => {
   if (menuDesplegable.style.display == "block") {
@@ -31,4 +33,9 @@ modo.addEventListener("click", () => {
   }
   localStorage.setItem("modoColor", modoColor);
   estilarPagina();
+});
+
+logout.addEventListener("click", () => {
+  loginServices.setAuthorization("");
+  window.location.href = "../index.html";
 });

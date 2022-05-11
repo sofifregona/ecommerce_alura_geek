@@ -10,23 +10,32 @@ const crearNuevaLinea = (id, nombre, precio) => {
     <div class="producto_imagen" id="img${id}"></div>
     <p class="producto_titulo">${nombre}</p>
     <p class="precio">${precio}</p>
-    <a class="ver_producto" href="#">Ver producto</a>`;
+    <a class="ver_producto" href="../screens/producto.html?id=${id}">Ver producto</a>`;
   linea.innerHTML = contenido;
   return linea;
 };
 
-productoServices
+const listaProductos = await productoServices
   .listaProductos()
   .then((data) => {
-    console.log(data);
-    data.forEach(({ id, seccion, nombre, precio, imagen }) => {
-      const section = document.querySelector(`[data-seccion${seccion.id}]`);
-      const nuevaLinea = crearNuevaLinea(id, nombre, precio, imagen);
-      section.appendChild(nuevaLinea);
-      const img = document.querySelector(`#img${id}`);
-      img.style.cssText = `background-image:url(${imagen});background-position:center;background-size:cover;background-repeat:no-repeat;`;
-    });
+    return data;
   })
   .catch((error) => console.log("Ocurrió un error"));
 
-estilarPagina();
+listaProductos.forEach((seccion) => {
+  for (
+    let i = seccion.productos.length - 6;
+    i < seccion.productos.length;
+    i++
+  ) {
+    const section = document.querySelector(`[data-seccion${seccion.id}]`);
+    const nuevaLinea = crearNuevaLinea(
+      seccion.productos[i].id,
+      seccion.productos[i].nombre,
+      seccion.productos[i].precio
+    );
+    section.appendChild(nuevaLinea);
+    const img = document.querySelector(`#img${seccion.productos[i].id}`);
+    img.style.cssText = `background-image:url(${seccion.productos[i].imagen});background-position:center;background-size:cover;background-repeat:no-repeat;`;
+  }
+});

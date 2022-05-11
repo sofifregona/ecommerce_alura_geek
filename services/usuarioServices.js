@@ -1,7 +1,7 @@
 const listaUsuarios = () => {
-  return fetch("https://ecommerce-challenge-heroku.herokuapp.com/users").then(
-    (respuesta) => respuesta.json()
-  );
+  return fetch(
+    "https://ecommerce-alurageek-challenge.herokuapp.com/users"
+  ).then((respuesta) => respuesta.json());
 };
 
 const registrarUsuario = (
@@ -17,7 +17,7 @@ const registrarUsuario = (
   cp,
   pais
 ) => {
-  return fetch("https://ecommerce-challenge-heroku.herokuapp.com/users", {
+  return fetch("https://ecommerce-alurageek-challenge.herokuapp.com/users", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

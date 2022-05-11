@@ -5,7 +5,6 @@
     }
 
     .menu {
-        background-color: #ffffff;
         height: 9vh;
         display: flex;
         align-items: center;
@@ -53,7 +52,6 @@
 
     .empty_button {
         border: 1px solid #2A7AE4;
-        background-color: #FFFFFF;
         width: 32vw;
         height: 5vh;
         color: #2A7AE4;
@@ -77,6 +75,15 @@
         text-align: left;
         display: flex;
         align-items: center;
+    }
+
+    .menu_desplegable ul li button a {
+        text-decoration: none;
+        color: #FFFFFF;
+    }
+
+    .menu_desplegable ul li button a:visited {
+        color: #FFFFFF;
     }
 
     .seccion_principal {
@@ -108,12 +115,14 @@
         padding-top: 1%;
     }
 
-    .contacto p {
+    .contacto_titulo {
         text-align: left;
         color: #555555;
         font-weight: 700;
-        margin: 8% 0 0 8%;
+        padding-top: 8%;
+        padding-left: 0;
         font-size: 1rem;
+        width: 80%;
     }
 
     .input {
@@ -165,7 +174,6 @@
         text-align: center;
         color: #555555;
         font-size: 1rem;
-        background-color: #ffffff;
         width: 100%;
     }
 }
@@ -248,14 +256,6 @@
         padding: 7%;
     }
 
-    .menu_desplegable ul li button a {
-        text-decoration: none;
-    }
-
-    .menu_desplegable ul li button a:visited {
-        color: #FFFFFF;
-    }
-
     .footer {
         display: flex;
         flex-wrap: wrap;
@@ -280,6 +280,10 @@
 
     .contacto {
         width: 60vw;
+    }
+
+    .contacto_titulo {
+        padding-left: 8%;
     }
 
     .button {
