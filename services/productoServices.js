@@ -1,7 +1,30 @@
 const listaProductos = () => {
   return fetch(
-    "https://ecommerce-alurageek-challenge.herokuapp.com/seccion"
+    "https://ecommerce-alurageek-challenge.herokuapp.com/productos"
   ).then((respuesta) => respuesta.json());
+};
+
+const detalleProducto = (seccion, id) => {
+  return fetch(
+    `https://ecommerce-alurageek-challenge.herokuapp.com/productos/${id}`
+  ).then((respuesta) => respuesta.json());
+};
+
+const actualizarStock = (id, nuevoStock) => {
+  return fetch(
+    `https://ecommerce-alurageek-challenge.herokuapp.com/productos/${id}`,
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        stock: nuevoStock,
+      }),
+    }
+  )
+    .then((respuesta) => respuesta)
+    .catch((error) => console.log(error));
 };
 
 /*
@@ -43,4 +66,6 @@ const listaProductos = () => {
 // Es necesario definir el type como module en la etiqueta script de html para poder usar import/export
 export const productoServices = {
   listaProductos,
+  detalleProducto,
+  actualizarStock,
 };

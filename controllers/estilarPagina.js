@@ -51,7 +51,7 @@ export function estilarPagina() {
     menu.style.backgroundColor = "#FFFFFF";
     logo.src = "../assets/img/Logo.svg";
     modo.innerHTML = "Modo oscuro";
-    empty_button.style.backgroundColor = "#FFFFFF";
+    // empty_button.style.backgroundColor = "#FFFFFF";
     buscar.classList.remove("buscar_oscuro");
     buscar.classList.add("buscar_clara");
     inputBuscador.style.backgroundColor = "#F5F5F5";
@@ -71,7 +71,7 @@ export function estilarPagina() {
     menu.style.backgroundColor = "#242424";
     logo.src = "../assets/img/Logo_blanco.png";
     modo.innerHTML = "Modo claro";
-    empty_button.style.backgroundColor = "#242424";
+    // empty_button.style.backgroundColor = "#242424";
     buscar.classList.remove("buscar_clara");
     buscar.classList.add("buscar_oscuro");
     inputBuscador.style.backgroundColor = "#636363";

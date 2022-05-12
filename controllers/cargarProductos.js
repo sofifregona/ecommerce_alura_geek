@@ -22,20 +22,17 @@ const listaProductos = await productoServices
   })
   .catch((error) => console.log("Ocurrió un error"));
 
-listaProductos.forEach((seccion) => {
-  for (
-    let i = seccion.productos.length - 6;
-    i < seccion.productos.length;
-    i++
-  ) {
-    const section = document.querySelector(`[data-seccion${seccion.id}]`);
+listaProductos.forEach((producto) => {
+  const section = document.querySelector(`[data-seccion${producto.seccion}]`);
+  const firstChild = section.firstChild;
+  if (section.childElementCount < 6) {
     const nuevaLinea = crearNuevaLinea(
-      seccion.productos[i].id,
-      seccion.productos[i].nombre,
-      seccion.productos[i].precio
+      producto.id,
+      producto.nombre,
+      producto.precio
     );
-    section.appendChild(nuevaLinea);
-    const img = document.querySelector(`#img${seccion.productos[i].id}`);
-    img.style.cssText = `background-image:url(${seccion.productos[i].imagen});background-position:center;background-size:cover;background-repeat:no-repeat;`;
+    section.insertBefore(nuevaLinea, firstChild);
+    const img = document.querySelector(`#img${producto.id}`);
+    img.style.cssText = `background-image:url(${producto.imagen});background-position:center;background-size:cover;background-repeat:no-repeat;`;
   }
 });

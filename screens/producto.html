@@ -71,11 +71,27 @@
             <p class="titulo_producto"></p>
             <p class="precio_producto"></p>
             <p class="descripcion_producto"></p>
-            <p class="stock_producto"></p>
-            <form>
-              <input class="cantidad_producto" type="number" />
-              <button class="button">Agregar al carrito</button>
-            </form>
+            <div class="div_carrito">
+              <div class="buttons">
+                <button class="button_stock minus">-</button>
+                <input
+                  type="number"
+                  step="1"
+                  min="1"
+                  max=""
+                  name="stock"
+                  value="1"
+                  title="Qty"
+                  class="cantidad_producto"
+                  pattern=""
+                  inputmode=""
+                  readonly
+                />
+                <button class="button_stock plus">+</button>
+              </div>
+              <p class="stock_producto"></p>
+            </div>
+            <button class="button_carrito">Agregar al carrito</button>
           </div>
         </div>
         <div class="productos_similares"></div>

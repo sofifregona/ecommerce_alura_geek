@@ -55,6 +55,7 @@
         width: 32vw;
         height: 5vh;
         color: #2A7AE4;
+        background-color: rgba(0, 0, 0, 0);
     }
 
     .menu_desplegable {

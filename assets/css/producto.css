@@ -14,7 +14,7 @@
 
     .titulo_producto {
         color: #555555;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         font-weight: 500;
         padding-bottom: 4%;
     }
@@ -24,6 +24,79 @@
         font-size: 1.2rem;
         font-weight: 700;
         padding-bottom: 4%;
+    }
+
+    .descripcion_producto {
+        color: #555555;
+        font-size: 0.9rem;
+        padding-bottom: 6%;
+    }
+
+    .div_carrito {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        padding-bottom: 6%;
+    }
+
+    .stock_producto {
+        color: #555555;
+        font-size: 1rem;
+        font-weight: 700;
+        vertical-align: center;
+        text-align: center;
+    }
+
+    .buttons {
+        width: 20vw;
+        padding: 2% 0 2% 2%;
+        text-align: left;
+        vertical-align: center;
+    }
+
+    .button_stock {
+        background-color: #2A7AE4;
+        padding: 7% 8%;
+        width: 22%;
+        font-size: 0.8rem;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        vertical-align: center;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .minus {
+        border-radius: 20px 0 0 20px;
+        padding: 7% 4% 7% 8%;
+    }
+
+    .plus {
+        border-radius: 0 20px 20px 0;
+        padding: 7% 8% 7% 4%;
+    }
+
+    .cantidad_producto {
+        padding: 7%;
+        border: none;
+        margin-left: -5px;
+        margin-right: -5px;
+        outline: none;
+        width: 15px;
+        text-align: center;
+    }
+
+    .button_carrito {
+        border: none;
+        background-color: #2A7AE4;
+        width: 42vw;
+        height: 8vw;
+        color: #FFFFFF;
+        margin-left: 1%;
+        font-size: 0.7rem;
     }
 }
 
