@@ -4,7 +4,7 @@ const listaProductos = () => {
   ).then((respuesta) => respuesta.json());
 };
 
-const detalleProducto = (seccion, id) => {
+const detalleProducto = (id) => {
   return fetch(
     `https://ecommerce-alurageek-challenge.herokuapp.com/productos/${id}`
   ).then((respuesta) => respuesta.json());
@@ -14,7 +14,7 @@ const actualizarStock = (id, nuevoStock) => {
   return fetch(
     `https://ecommerce-alurageek-challenge.herokuapp.com/productos/${id}`,
     {
-      method: "PUT",
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },

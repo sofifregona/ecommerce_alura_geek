@@ -17,23 +17,11 @@ const menos = document.querySelector(".minus");
 const mas = document.querySelector(".plus");
 const boton = document.querySelector(".button_carrito");
 
-const listaSeccion = await productoServices
-  .listaProductos()
+const product = await productoServices
+  .detalleProducto(idProducto)
   .then((response) => {
     return response;
   });
-
-let section;
-let product;
-
-listaSeccion.forEach((seccion) => {
-  seccion.productos.forEach((producto) => {
-    if (producto.id === idProducto) {
-      section = seccion.id;
-      product = producto;
-    }
-  });
-});
 
 imagen.style.cssText = `background-image:url(${product.imagen});background-position:center;background-size:cover;background-repeat:no-repeat;`;
 titulo.innerHTML = product.nombre;
@@ -83,5 +71,5 @@ boton.addEventListener("click", () => {
       usuarioServicios.actualizarCarritoUsuario(userId, response.carrito);
     })
     .catch((error) => console.log("Ocurrió un error"));
-  productoServices.actualizarStock(section, productId, nuevoStock);
+  productoServices.actualizarStock(productId, nuevoStock);
 });

@@ -49,7 +49,7 @@ const actualizarCarritoUsuario = (userId, nuevoCarrito) => {
   return fetch(
     `https://ecommerce-alurageek-challenge.herokuapp.com/users/${userId}`,
     {
-      method: "PUT",
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
