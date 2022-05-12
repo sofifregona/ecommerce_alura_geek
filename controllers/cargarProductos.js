@@ -7,7 +7,7 @@ const crearNuevaLinea = (id, nombre, precio) => {
   const contenido = `
     <div class="producto_imagen" id="img${id}"></div>
     <p class="producto_titulo">${nombre}</p>
-    <p class="precio">${precio}</p>
+    <p class="precio">$${precio}</p>
     <a class="ver_producto" href="../screens/producto.html?id=${id}">Ver producto</a>`;
   linea.innerHTML = contenido;
   return linea;

@@ -14,7 +14,7 @@ if (status === "67b0735a-08d6-4ae0-afef-efde5664e46c") {
           </div>
           <div class="producto_imagen" id="img${id}"></div>
           <p class="producto_titulo">${nombre}</p>
-          <p class="precio">${precio}</p>
+          <p class="precio">$${precio}</p>
           <p class="id_producto">${id}</p>`;
     linea.innerHTML = contenido;
     return linea;

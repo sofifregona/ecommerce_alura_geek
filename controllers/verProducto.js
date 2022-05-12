@@ -58,19 +58,23 @@ const productId = product.id;
 const userId = loginServices.getAutorizathion();
 
 boton.addEventListener("click", () => {
-  const cantidadCompra = cantidad.value;
-  const nuevoStock = product.stock - cantidadCompra;
-  usuarioServicios
-    .detalleUsuario(userId)
-    .then((response) => {
-      response.carrito.push({
-        productId,
-        cantidadCompra,
-      });
-      usuarioServicios.actualizarCarritoUsuario(userId, response.carrito);
-    })
-    .catch((error) => console.log("Ocurrió un error"));
-  productoServices.actualizarStock(productId, nuevoStock);
+  console.log("hice click en el boton");
+  console.log(product.stock);
+  if (product.stock > 0) {
+    const cantidadCompra = cantidad.value;
+    const nuevoStock = product.stock - cantidadCompra;
+    usuarioServicios
+      .detalleUsuario(userId)
+      .then((response) => {
+        response.carrito.push({
+          productId,
+          cantidadCompra,
+        });
+        usuarioServicios.actualizarCarritoUsuario(userId, response.carrito);
+      })
+      .catch((error) => console.log("Ocurrió un error"));
+    productoServices.actualizarStock(productId, nuevoStock);
+  }
 });
 
 const crearNuevaLinea = (id, nombre, precio) => {
@@ -80,7 +84,7 @@ const crearNuevaLinea = (id, nombre, precio) => {
   const contenido = `
     <div class="producto_imagen" id="img${id}"></div>
     <p class="producto_titulo">${nombre}</p>
-    <p class="precio">${precio}</p>
+    <p class="precio">$${precio}</p>
     <a class="ver_producto" href="../screens/producto.html?id=${id}">Ver producto</a>`;
   linea.innerHTML = contenido;
   return linea;
