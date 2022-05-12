@@ -1,8 +1,6 @@
-import { estilarPagina } from "./estilarPagina.js";
 import { productoServices } from "../services/productoServices.js";
 import { loginServices } from "../services/loginServices.js";
 import { usuarioServicios } from "../services/usuarioServices.js";
-estilarPagina();
 
 const href = window.location.search;
 const idProducto = href.slice(4, href.length);
@@ -56,10 +54,11 @@ mas.addEventListener("click", () => {
   }
 });
 
+const productId = product.id;
+const userId = loginServices.getAutorizathion();
+
 boton.addEventListener("click", () => {
   const cantidadCompra = cantidad.value;
-  const productId = product.id;
-  const userId = loginServices.getAutorizathion();
   const nuevoStock = product.stock - cantidadCompra;
   usuarioServicios
     .detalleUsuario(userId)
@@ -73,3 +72,39 @@ boton.addEventListener("click", () => {
     .catch((error) => console.log("Ocurrió un error"));
   productoServices.actualizarStock(productId, nuevoStock);
 });
+
+const crearNuevaLinea = (id, nombre, precio) => {
+  const linea = document.createElement("div");
+  linea.classList.add("producto");
+  linea.id = id;
+  const contenido = `
+    <div class="producto_imagen" id="img${id}"></div>
+    <p class="producto_titulo">${nombre}</p>
+    <p class="precio">${precio}</p>
+    <a class="ver_producto" href="../screens/producto.html?id=${id}">Ver producto</a>`;
+  linea.innerHTML = contenido;
+  return linea;
+};
+
+productoServices
+  .listaProductos()
+  .then((data) => {
+    for (let i = data.length - 1; i >= 0; i--) {
+      const producto = data[i];
+      const container = document.querySelector(".productos_similares");
+      if (
+        container.childElementCount < 6 &&
+        product.seccion === producto.seccion
+      ) {
+        const nuevaLinea = crearNuevaLinea(
+          producto.id,
+          producto.nombre,
+          producto.precio
+        );
+        container.appendChild(nuevaLinea);
+        const img = document.querySelector(`#img${producto.id}`);
+        img.style.cssText = `background-image:url(${producto.imagen});background-position:center;background-size:cover;background-repeat:no-repeat;`;
+      }
+    }
+  })
+  .catch((error) => console.log("Ocurrió un error"));

@@ -1,7 +1,5 @@
-import { estilarPagina } from "./estilarPagina.js";
 import { loginServices } from "../services/loginServices.js";
 import { productoServices } from "../services/productoServices.js";
-estilarPagina();
 
 const status = loginServices.getAutorizathion();
 if (status === "67b0735a-08d6-4ae0-afef-efde5664e46c") {

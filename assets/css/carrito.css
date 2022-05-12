@@ -1,0 +1,51 @@
+@media screen and (min-width:0px) {
+    .carrito_titulo {
+        display: flex;
+        color: #555555;
+        font-weight: 600;
+        font-size: 1.4rem;
+        padding: 5% 0 4% 4%;
+    }
+
+    .imagen_producto {
+        background-image: url(../img/StarWars/sw_producto1.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 80%;
+        width: 20%;
+        margin-left: 3%;
+    }
+
+    .producto {
+        background-color: #2A7AE4;
+        box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 4%;
+        width: 92%;
+        height: 15vw;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nombre_producto {
+        font-size: 0.9rem;
+        width: 35vw;
+        color: #FFFFFF;
+        font-weight: 500;
+    }
+
+    .precio_producto, .cantidad_producto {
+        font-size: 0.9rem;
+        color: #FFFFFF
+    }
+
+    .eliminar_producto {
+        padding-right: 3%;
+    }
+}
+
+@media screen and (min-width: 480px) {}
+
+@media screen and (min-width: 768px) {}

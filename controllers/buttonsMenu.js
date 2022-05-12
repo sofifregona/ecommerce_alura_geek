@@ -5,6 +5,7 @@ const menuDesplegable = document.querySelector(".menu_desplegable");
 const body = document.querySelector("body");
 const modo = document.querySelector(".modo");
 const logout = document.querySelector(".logOut");
+estilarPagina();
 
 button.addEventListener("click", () => {
   if (menuDesplegable.style.display == "block") {

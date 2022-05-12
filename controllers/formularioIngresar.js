@@ -1,8 +1,6 @@
 import { usuarioServicios } from "../services/usuarioServices.js";
-import { estilarPagina } from "./estilarPagina.js";
 import { desencriptar } from "./encriptador.js";
 import { loginServices } from "../services/loginServices.js";
-estilarPagina();
 
 const listaDeUsuarios = await usuarioServicios.listaUsuarios();
 const container = document.querySelector(".mensajes_de_errores");

@@ -1,6 +1,4 @@
 import { productoServices } from "../services/productoServices.js";
-import { estilarPagina } from "./estilarPagina.js";
-estilarPagina();
 
 const crearNuevaLinea = (id, nombre, precio) => {
   const linea = document.createElement("div");

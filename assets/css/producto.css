@@ -29,7 +29,7 @@
     .descripcion_producto {
         color: #555555;
         font-size: 0.9rem;
-        padding-bottom: 6%;
+        padding-bottom: 3%;
     }
 
     .div_carrito {
@@ -38,7 +38,7 @@
         width: 100%;
         justify-content: flex-start;
         align-items: center;
-        padding-bottom: 6%;
+        padding-bottom: 3%;
     }
 
     .stock_producto {
@@ -51,7 +51,7 @@
 
     .buttons {
         width: 20vw;
-        padding: 2% 0 2% 2%;
+        padding: 2% 0 2% 0;
         text-align: left;
         vertical-align: center;
     }
@@ -95,11 +95,205 @@
         width: 42vw;
         height: 8vw;
         color: #FFFFFF;
-        margin-left: 1%;
         font-size: 0.7rem;
+    }
+
+    .productos_similares {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1%;
+    }
+
+    .productos_similares_titulo {
+        display: flex;
+        color: #555555;
+        font-weight: 600;
+        font-size: 1.4rem;
+        padding: 5% 0 1% 4%;
+    }
+
+    .producto {
+        margin: 2%;
+        width: 45%;
+        color: #555555;
+    }
+
+    .producto_imagen {
+        height: 50vw;
+    }
+
+    .producto:nth-child(5) {
+        display: none;
+    }
+
+    .producto:nth-child(6) {
+        display: none;
+    }
+
+    .producto_titulo {
+        font-weight: 400;
+        margin-top: 6%;
+        margin-left: 2%;
+        font-size: 0.9rem;
+    }
+
+    .precio {
+        font-weight: 700;
+        margin-top: 3%;
+        margin-left: 2%;
+        margin-bottom: 4%;
+        font-size: 0.9rem;
+    }
+
+    .ver_producto {
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-left: 2%;
+        color: #2A7AE4;
+        padding-bottom: 2%;
     }
 }
 
-@media screen and (min-width: 480px) {}
+@media screen and (min-width: 480px) {
 
-@media screen and (min-width: 768px) {}
+    .producto_principal {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .productos_similares {
+        padding: 2%;
+    }
+
+    .productos_similares_titulo {
+        padding-left: 5%;
+        padding-bottom: 0;
+        padding-top: 2%;
+    }
+
+    .imagen_producto {
+        width: 30%;
+        height: 30vw;
+        margin: 4% 3% 4% 5%;
+        min-height: 220px;
+    }
+
+    .producto_informacion {
+        width: 56%;
+        padding: 4% 5% 0 0;
+    }
+
+    .titulo_producto {
+        padding-bottom: 2%;
+    }
+
+    .precio_producto {
+        padding-bottom: 2%;
+        font-size: 0.9rem;
+    }
+
+    .descripcion_producto {
+        font-size: 0.8rem;
+        padding-bottom: 3%;
+    }
+
+    .div_carrito {
+        padding-bottom: 4%;
+    }
+
+    .buttons {
+        width: 10vw;
+        padding: 0;
+    }
+
+    .button_stock {
+        padding: 4% 8%;
+        width: 30%;
+    }
+
+    .stock_producto {
+        font-size: 0.9rem;
+        padding-left: 4%;
+    }
+
+    .cantidad_producto {
+        padding: 4%;
+        width: 28%;
+    }
+
+    .button_carrito {
+        width: 22vw;
+        height: 4vw;
+        margin: 0;
+    }
+
+    .producto {
+        margin: 1%;
+        width: 22%;
+    }
+
+    .producto_imagen {
+        height: 20vh;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .producto {
+        margin: 0.75%;
+        width: 12vw;
+    }
+
+    .imagen_producto {
+        margin-left: 10.5%;
+        height: 28vw;
+        min-height: 250px;
+        width: 35%;
+        max-height: 250px;
+    }
+
+    .titulo_producto {
+        font-size: 2rem;
+        margin-top: 1vw;
+    }
+
+    .precio_producto {
+        font-size: 0.85rem;
+    }
+
+    .descripcion_producto {
+        font-size: 0.85rem;
+    }
+
+    .producto_informacion {
+        width: 40%;
+    }
+
+    .button_carrito {
+        height: 2.5vw;
+        width: 15vw;
+    }
+
+    .productos_similares_titulo {
+        padding-top: 0;
+        padding-left: 10.5%;
+    }
+
+    .productos_similares {
+        padding-top: 1%;
+    }
+
+    .producto_imagen {
+        height: 22vh;
+    }
+
+    .producto:nth-child(5) {
+        display: inline;
+    }
+
+    .producto:nth-child(6) {
+        display: inline;
+    }
+}

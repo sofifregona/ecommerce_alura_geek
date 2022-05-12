@@ -9,7 +9,6 @@ const logout = document.querySelector(".logOut");
 const signin = document.querySelector(".signIn");
 const productos = document.querySelector(".productos");
 const carrito = document.querySelector(".carrito");
-const empty_button = document.querySelector(".empty_button");
 const buscar = document.querySelector(".buscar");
 const inputBuscador = document.querySelector(".input_buscador");
 const copyright = document.querySelector(".copyright");
@@ -21,7 +20,6 @@ const input = document.querySelectorAll(".input");
 
 export function estilarPagina() {
   const isAuth = loginServices.getAutorizathion();
-  console.log(isAuth);
   if (isAuth === null) loginServices.setAuthorization("");
   if (isAuth !== "") {
     signin.style.display = "none";
@@ -51,7 +49,6 @@ export function estilarPagina() {
     menu.style.backgroundColor = "#FFFFFF";
     logo.src = "../assets/img/Logo.svg";
     modo.innerHTML = "Modo oscuro";
-    // empty_button.style.backgroundColor = "#FFFFFF";
     buscar.classList.remove("buscar_oscuro");
     buscar.classList.add("buscar_clara");
     inputBuscador.style.backgroundColor = "#F5F5F5";
@@ -71,7 +68,6 @@ export function estilarPagina() {
     menu.style.backgroundColor = "#242424";
     logo.src = "../assets/img/Logo_blanco.png";
     modo.innerHTML = "Modo claro";
-    // empty_button.style.backgroundColor = "#242424";
     buscar.classList.remove("buscar_clara");
     buscar.classList.add("buscar_oscuro");
     inputBuscador.style.backgroundColor = "#636363";
