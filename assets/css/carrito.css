@@ -4,26 +4,28 @@
         color: #555555;
         font-weight: 600;
         font-size: 1.4rem;
-        padding: 5% 0 4% 4%;
+        padding: 5% 0 2% 4%;
     }
 
     .imagen_producto {
         background-image: url(../img/StarWars/sw_producto1.jpg);
         background-position: center;
         background-repeat: no-repeat;
+        border-radius: 10px;
         background-size: cover;
-        height: 80%;
+        height: 85%;
         width: 20%;
-        margin-left: 3%;
+        margin-left: 2%;
     }
 
     .producto {
-        background-color: #2A7AE4;
+        background-color: rgba(134, 134, 134, 0.2);
+        border-radius: 10px;
         box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.2);
         display: flex;
         flex-wrap: wrap;
         margin-left: 4%;
-        margin-bottom: 2%;
+        margin-bottom: 4%;
         width: 92%;
         height: 15vw;
         justify-content: space-between;
@@ -31,22 +33,71 @@
     }
 
     .nombre_producto {
-        font-size: 0.9rem;
+        font-size: 1rem;
         width: 35vw;
-        color: #FFFFFF;
-        font-weight: 500;
+        color: #555555;
+        font-weight: 700;
     }
 
     .precio_producto, .cantidad_producto {
-        font-size: 0.9rem;
-        color: #FFFFFF
+        font-size: 1rem;
+        font-weight: 500;
+        color: #555555
     }
 
     .eliminar_producto {
         padding-right: 3%;
     }
+
+    .finalizar_compra {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3%;
+    }
+
+    .button_pagar {
+        border: none;
+        background-color: #2A7AE4;
+        width: 15vw;
+        height: 5vh;
+        color: #FFFFFF;
+        margin-left: 25%;
+    }
+
+    .mensaje {
+        width: 40%;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-align: left;
+        margin-left: 2%;
+        color: #555555;
+    }
 }
 
-@media screen and (min-width: 480px) {}
+@media screen and (min-width: 480px) {
+    .producto {
+        margin-bottom: 2%;
+        height: 12vw;
+        max-height: 70px;
+    }
 
-@media screen and (min-width: 768px) {}
+    .imagen_producto {
+        height: 85%;
+        width: 15%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .producto {
+        height: 8vw;
+        width: 78%;
+        margin-left: 10%;
+        margin-bottom: 1.5%;
+    }
+
+    .mensaje {
+        margin-left: 11%;
+    }
+}

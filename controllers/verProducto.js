@@ -30,12 +30,15 @@ let nuevaCantidad = cantidad.value;
 let max;
 
 if (product.stock > 1) {
+  activarBotones();
   max = product.stock;
   stock.innerHTML = `${product.stock} unidades en stock.`;
 } else if (product.stock === 1) {
+  activarBotones();
   max = 1;
-  stock.innerHTML = `¡Apúrate! Sólo queda ${product.stock} unidad en stock.`;
+  stock.innerHTML = `¡Sólo queda ${product.stock} unidad en stock!`;
 } else {
+  desactivarBotones();
   cantidad.innerHTML = 0;
   stock.innerHTML = `Sin stock por el momento.`;
 }
@@ -58,10 +61,9 @@ const productId = product.id;
 const userId = loginServices.getAutorizathion();
 
 boton.addEventListener("click", () => {
-  console.log("hice click en el boton");
-  console.log(product.stock);
   if (product.stock > 0) {
     const cantidadCompra = cantidad.value;
+    console.log(cantidadCompra);
     const nuevoStock = product.stock - cantidadCompra;
     usuarioServicios
       .detalleUsuario(userId)
@@ -70,10 +72,18 @@ boton.addEventListener("click", () => {
           productId,
           cantidadCompra,
         });
-        usuarioServicios.actualizarCarritoUsuario(userId, response.carrito);
+        console.log(response.carrito);
+        usuarioServicios
+          .actualizarCarritoUsuario(userId, response.carrito)
+          .then((resp) => {
+            console.log(resp);
+          });
+        productoServices.actualizarStock(productId, nuevoStock);
       })
-      .catch((error) => console.log("Ocurrió un error"));
-    productoServices.actualizarStock(productId, nuevoStock);
+      .catch((error) => console.log("Ocurrió un error"))
+      .finally(() => {
+        //window.location.href = "../screens/carrito.html";
+      });
   }
 });
 
@@ -112,3 +122,23 @@ productoServices
     }
   })
   .catch((error) => console.log("Ocurrió un error"));
+
+function desactivarBotones() {
+  menos.style.backgroundColor = "#555555";
+  mas.style.backgroundColor = "#555555";
+  boton.style.backgroundColor = "#555555";
+  menos.style.color = "#A2A2A2";
+  mas.style.color = "#A2A2A2";
+  boton.style.color = "#A2A2A2";
+  stock.style.color = "red";
+}
+
+function activarBotones() {
+  menos.style.backgroundColor = "#2A7AE4";
+  mas.style.backgroundColor = "#2A7AE4";
+  boton.style.backgroundColor = "#2A7AE4";
+  menos.style.color = "#FFFFFF";
+  mas.style.color = "#FFFFFF";
+  boton.style.color = "#FFFFFF";
+  stock.style.color = "#555555";
+}
