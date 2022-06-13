@@ -2,8 +2,8 @@
     .titulo {
         color: #555555;
         text-align: center;
-        padding-top: 20%;
-        padding-bottom: 8%;
+        padding-top: 12vw;
+        padding-bottom: 6vw;
         font-size: 1.2rem;
         font-weight: 700;
         width: 100%;
@@ -15,20 +15,32 @@
         text-align: center;
     }
 
-    form p {
-        color: #555555;
-        text-align: left;
-        font-size: 0.9rem;
-        margin-left: 5vw;
-    }
-
     .input_form {
         width: 90vw;
-        height: 10vw;
+        height: 12vw;
         margin: auto;
-        margin-bottom: 2vw;
+        margin-bottom: 4vw;
         margin-top: 2vw;
         max-width: 500px;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        padding-top: 2vw;
+        text-align: left;
+    }
+
+    .input_form p {
+        font-size: 0.8rem;
+        color: #555555;
+        text-align: left;
+    }
+
+    .input_login {
+        margin-top: 1vw;
+        width: 86vw;
+        height: 7vw;
+        border: none;
+        outline: none;
+        background-color: rgba(0, 0, 0, 0);
+        padding-left: 0;
     }
 
     .mensajes_de_errores {
@@ -39,6 +51,7 @@
     }
 
     span {
+        display: none;
         font-size: 0.7rem;
         color: #ff0000;
     }
@@ -49,7 +62,7 @@
     }
 
     .div_btn_form {
-        padding-bottom: 20%;
+        padding-bottom: 6vw;
         text-align: center;
     }
 
@@ -61,8 +74,8 @@
 @media screen and (min-width: 480px) {
     .titulo {
         font-size: 1.3rem;
-        padding-top: 10%;
-        padding-bottom: 30px;
+        padding-top: 8vw;
+        padding-bottom: 2vw;
     }
 
     .formulario {
@@ -75,24 +88,24 @@
         align-items: center;
     }
 
-    form p {
-        width: 80px;
-        padding-right: 10px;
-        margin-left: 5px;
-        text-align: left;
-        font-size: 1rem;
+    .input_form {
+        width: 91.5vw;
+        height: 9vw;
+        max-height: 50px;
+        margin-left: auto;
+        margin-top: 2.5vw;
+        margin-bottom: 0.5vw;
     }
 
-    .input_form {
-        max-width: 350px;
-        height: 35px;
-        margin: 5px;
+    .input_login {
+        width: 80vw;
+        height: 5vw;
     }
 
     .div_btn_form {
         width: 100%;
         text-align: center;
-        padding-bottom: 8%;
+        padding-bottom: 5vw;
     }
 
     span {
@@ -101,6 +114,36 @@
 
     .button_form {
         height: 45px;
+        font-size: 0.8rem;
+        width: 20vw;
         margin-left: 0;
     }
+}
+
+@media screen and (min-width: 768px) {
+    .titulo {
+        padding-top: 6vw;
+        padding-bottom: 2vw;
+    }
+
+    .input_form {
+        padding-top: 1vw;
+        padding-left: 1vw;
+        margin-top: 1.25vw;
+        margin-bottom: 0.5vw;
+    }
+
+    .input_login {
+        max-height: 20px;
+    }
+
+    .div_btn_form {
+        padding-bottom: 2vw;
+    }
+
+    .input_login {
+        height: 2vw;
+        width: 500px;
+    }
+
 }

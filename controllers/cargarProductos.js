@@ -34,21 +34,3 @@ productoServices
     }
   })
   .catch((error) => console.log("Ocurrió un error"));
-
-/*
-listaProductos.forEach((producto) => {
-  const section = document.querySelector(`[data-seccion${producto.seccion}]`);
-  const firstChild = section.firstChild;
-  console.log(firstChild);
-  if (section.childElementCount < 6) {
-    const nuevaLinea = crearNuevaLinea(
-      producto.id,
-      producto.nombre,
-      producto.precio
-    );
-    section.insertBefore(nuevaLinea, firstChild);
-    const img = document.querySelector(`#img${producto.id}`);
-    img.style.cssText = `background-image:url(${producto.imagen});background-position:center;background-size:cover;background-repeat:no-repeat;`;
-  }
-});
-*/

@@ -25,7 +25,7 @@ export function estilarPagina() {
     signin.style.display = "none";
     login.style.display = "none";
     logout.style.display = "block";
-    if (isAuth === "67b0735a-08d6-4ae0-afef-efde5664e46c") {
+    if (isAuth === "administrador") {
       console.log("Modo administrador");
       productos.style.display = "block";
       carrito.style.display = "none";

@@ -65,6 +65,8 @@
         vertical-align: center;
         margin-right: 0;
         margin-left: 0;
+        background-color: #2A7AE4;
+        color: #ffffff;
     }
 
     .minus {
@@ -92,6 +94,8 @@
         width: 42vw;
         height: 8vw;
         font-size: 0.7rem;
+        background-color: #2A7AE4;
+        color: #ffffff;
     }
 
     .productos_similares {

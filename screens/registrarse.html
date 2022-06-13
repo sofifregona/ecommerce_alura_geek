@@ -33,29 +33,19 @@
           <nav class="menu_desplegable">
             <ul>
               <li>
-                <button class="signIn">
-                  <a href="registrarse.html">Registrarse</a>
-                </button>
+                <button class="signIn">Registrarse</button>
               </li>
               <li>
-                <button class="logIn">
-                  <a href="iniciarSesion.html">Iniciar sesión</a>
-                </button>
+                <button class="logIn">Iniciar Sesión</button>
               </li>
               <li>
-                <button class="logOut">
-                  <a href="../index.html">Cerrar sesión</a>
-                </button>
+                <button class="logOut">Cerrar Sesión</button>
               </li>
               <li>
-                <button class="productos">
-                  <a href="administrador.html">Productos</a>
-                </button>
+                <button class="productos">Productos</button>
               </li>
               <li>
-                <button class="carrito">
-                  <a href="carrito.html">Carrito</a>
-                </button>
+                <button class="carrito">Carrito</button>
               </li>
               <li><button class="modo"></button></li>
             </ul>
@@ -67,93 +57,120 @@
       <div class="seccion_principal">
         <h3 class="titulo">Registro</h3>
         <form class="formulario">
-          <p>Nombre*</p>
-          <input
-            class="input input_form"
-            id="nombre"
-            type="text"
-            data-tipo="nombre"
-            pattern="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]{3,}"
-            required
-          />
-          <p>Username*</p>
-          <input
-            class="input input_form"
-            id="username"
-            type="text"
-            data-tipo="username"
-            pattern="\w{8,20}"
-            required
-          />
-          <p>E-mail*</p>
-          <input
-            class="input input_form"
-            id="email"
-            type="text"
-            data-tipo="email"
-            pattern="[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}"
-            required
-          />
-          <p>Password*</p>
-          <input
-            class="input input_form"
-            id="password"
-            type="password"
-            data-tipo="password"
-            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[ !@#$%^&*_=+-]).{6,12}$"
-            required
-          />
-          <p>Repita la password*</p>
-          <input
-            class="input input_form"
-            id="secondpassword"
-            type="password"
-            data-tipo="secondpassword"
-            required
-          />
-          <p>Teléfono</p>
-          <input
-            class="input input_form"
-            id="telefono"
-            type="tel"
-            data-tipo="telefono"
-          />
-          <p>Domicilio</p>
-          <input
-            class="input input_form"
-            id="domicilio"
-            type="text"
-            data-tipo="domicilio"
-          />
-          <p>Ciudad</p>
-          <input
-            class="input input_form"
-            id="ciudad"
-            type="text"
-            data-tipo="ciudad"
-          />
-          <p>Estado o Provincia</p>
-          <input
-            class="input input_form provincia"
-            id="provincia"
-            type="text"
-            data-tipo="provincia"
-          />
-          <p>Código postal</p>
-          <input
-            class="input input_form codigo_postal"
-            id="cp"
-            type="text"
-            data-tipo="cp"
-          />
-          <p>País</p>
-          <input
-            class="input input_form"
-            id="pais"
-            type="text"
-            data-tipo="pais"
-          />
-          <p>(*) Campos obligatorios</p>
+          <div class="input div_registro">
+            <p>Nombre*</p>
+            <input
+              class="input_registro obligatorio"
+              id="nombre"
+              type="text"
+              data-tipo="nombre"
+              name="nombre"
+              pattern="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]{3,}"
+              required
+            />
+          </div>
+          <span class="registro_span nombre"></span>
+          <div class="input div_registro">
+            <p>Nombre de usuario*</p>
+            <input
+              class="input_registro obligatorio"
+              id="username"
+              type="text"
+              data-tipo="username"
+              name="nombre de usuario"
+              pattern="\w{8,20}"
+              required
+            />
+          </div>
+          <span class="registro_span username"></span>
+          <div class="input div_registro">
+            <p>E-mail*</p>
+            <input
+              class="input_registro obligatorio"
+              id="email"
+              type="text"
+              data-tipo="email"
+              name="e-mail"
+              pattern="[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}"
+              required
+            />
+          </div>
+          <span class="registro_span email"></span>
+          <div class="input div_registro">
+            <p>Contraseña*</p>
+            <input
+              class="input_registro obligatorio"
+              id="password"
+              type="password"
+              data-tipo="password"
+              name="contraseña"
+              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[ !@#$%^&*_=+-]).{6,12}$"
+              required
+            />
+          </div>
+          <span class="registro_span password"></span>
+          <div class="input div_registro">
+            <p>Repita la contraseña*</p>
+            <input
+              class="input_registro obligatorio"
+              id="secondpassword"
+              type="password"
+              data-tipo="secondpassword"
+              name="repetir contraseña"
+              required
+            />
+          </div>
+          <span class="registro_span secondpassword"></span>
+          <div class="input div_registro">
+            <p>Teléfono</p>
+            <input
+              class="input_registro"
+              id="telefono"
+              type="tel"
+              data-tipo="telefono"
+            />
+          </div>
+          <div class="input div_registro">
+            <p>Domicilio</p>
+            <input
+              class="input_registro"
+              id="domicilio"
+              type="text"
+              data-tipo="domicilio"
+            />
+          </div>
+          <div class="input div_registro">
+            <p>Ciudad</p>
+            <input
+              class="input_registro"
+              id="ciudad"
+              type="text"
+              data-tipo="ciudad"
+            />
+          </div>
+          <div class="input div_registro provincia">
+            <p>Estado o Provincia</p>
+            <input
+              class="input_registro"
+              id="provincia"
+              type="text"
+              data-tipo="provincia"
+            />
+          </div>
+          <div class="input div_registro codigo_postal">
+            <p>Código postal</p>
+            <input class="input_registro" id="cp" type="text" data-tipo="cp" />
+          </div>
+          <div class="input div_registro">
+            <p>País</p>
+            <input
+              class="input_registro"
+              id="pais"
+              type="text"
+              data-tipo="pais"
+            />
+          </div>
+          <p class="campos_obligatorios">(*) Campos obligatorios</p>
           <div class="mensajes_de_errores"></div>
         </form>
         <div class="div_btn_form">

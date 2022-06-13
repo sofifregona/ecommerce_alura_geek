@@ -76,15 +76,12 @@
         text-align: left;
         display: flex;
         align-items: center;
+        color: #ffffff;
     }
 
-    .menu_desplegable ul li button a {
-        text-decoration: none;
-        color: #FFFFFF;
-    }
-
-    .menu_desplegable ul li button a:visited {
-        color: #FFFFFF;
+    .menu_desplegable ul li button:hover {
+        background-color: #1c91ff;
+        color: #000000;
     }
 
     .seccion_principal {
@@ -133,9 +130,10 @@
         padding-left: 2%;
     }
 
+
     .input::placeholder {
         vertical-align: top;
-        color: #A2A2A2;
+        color: #666666;
         font-family: "Raleway";
     }
 
@@ -294,10 +292,6 @@
 
     .input_nombre, .input_mensaje {
         width: 85%;
-    }
-
-    .input_nombre::placeholder, .input_mensaje::placeholder {
-        color: #666666;
     }
 
     .copyright {

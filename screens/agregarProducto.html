@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>AluraGeek</title>
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/agregarProducto.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="menu">
+        <div class="logo">
+          <a href="../index.html"
+            ><img class="logo_imagen" src="../assets/img/Logo.svg"
+          /></a>
+        </div>
+        <div class="buscador">
+          <input
+            class="input_buscador"
+            placeholder="¿Qué deseas buscar?"
+            type="search"
+          />
+          <button class="buscar"></button>
+        </div>
+        <div class="div_button">
+          <button class="empty_button">Menú</button>
+          <nav class="menu_desplegable">
+            <ul>
+              <li>
+                <button class="signIn">Registrarse</button>
+              </li>
+              <li>
+                <button class="logIn">Iniciar Sesión</button>
+              </li>
+              <li>
+                <button class="logOut">Cerrar Sesión</button>
+              </li>
+              <li>
+                <button class="productos">Productos</button>
+              </li>
+              <li>
+                <button class="carrito">Carrito</button>
+              </li>
+              <li><button class="modo"></button></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="seccion_principal">
+        <h3 class="titulo">Agregar nuevo producto</h3>
+        <div class="container_agregar_imagen">
+          <div class="input input_form imagen_producto" id="imagen">
+            <div class="icono_agregar_imagen"></div>
+            <p class="texto_agregar_imagen">
+              Agregar una imagen para el producto
+            </p>
+            <p class="texto_arrastrar_imagen">
+              Arrastre para agregar una imagen para el producto
+            </p>
+          </div>
+          <p class="o">o</p>
+          <button class="buscar_imagen_dispositivo empty_button">
+            Busque en su dispositivo
+          </button>
+          <input
+            class="file_element"
+            placeholder="Busque en su dispositivo"
+            type="file"
+            style="display: none"
+          />
+        </div>
+        <span class="span_imagen span_form" id="span_imagen"></span>
+        <form>
+          <div class="input input_form nombre_producto" id="nombre">
+            <label class="titulo_input">Nombre del producto*</label>
+            <input
+              class="input_nombre_producto"
+              type="text"
+              maxlength="20"
+              required
+            />
+          </div>
+          <span class="span_nombre span_form" id="span_nombre"></span>
+          <div class="container">
+            <div class="input input_form seccion_producto" id="seccion">
+              <div class="seleccion_seccion">
+                <label class="titulo_input">Sección*</label>
+                <input class="input_seccion_producto" disabled />
+                <nav class="secciones">
+                  <ul class="lista_secciones">
+                    <li class="seccion">Star Wars</li>
+                    <li class="seccion">Consolas</li>
+                    <li class="seccion">Diversos</li>
+                  </ul>
+                </nav>
+              </div>
+              <button class="seleccionar_seccion">▼</button>
+            </div>
+            <div class="input input_form cantidad_producto" id="stock">
+              <label class="titulo_input">Stock*</label>
+              <input
+                class="input_stock_producto"
+                type="number"
+                step="1"
+                required
+              />
+            </div>
+          </div>
+          <span class="span_stock span_form" id="span_stock"></span>
+          <div class="input input_form precio_producto" id="precio">
+            <label class="titulo_input">Precio*</label>
+            <input
+              class="input_precio_producto"
+              type="number"
+              pattern="[0-9]+"
+              required
+            />
+          </div>
+          <span class="span_precio span_form" id="span_precio"></span>
+          <div class="input input_form descripcion_producto" id="descripcion">
+            <label class="titulo_input">Descripción</label>
+            <input
+              class="input_descripcion_producto"
+              type="text"
+              maxlength="150"
+            />
+          </div>
+        </form>
+        <p class="campos_obligatorios">(*) Campos obligatorios</p>
+        <button class="boton_agregar_producto">Agregar producto</button>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="lista">
+        <img class="footer_logo" src="../assets/img/Logo.svg" />
+        <ul class="footer_lista">
+          <li class="footer_lista_elemento">Quiénes somos</li>
+          <li class="footer_lista_elemento">Política de privacidad</li>
+          <li class="footer_lista_elemento">Programa de fidelidad</li>
+          <li class="footer_lista_elemento">Nuestras tiendas</li>
+          <li class="footer_lista_elemento">Quiero ser franquiciado</li>
+          <li class="footer_lista_elemento">Anuncie aquí</li>
+        </ul>
+      </div>
+      <form class="contacto">
+        <p class="contacto_titulo">Hable con nosotros</p>
+        <input class="input input_nombre" placeholder="Nombre" type="text" />
+        <textarea
+          class="input input_mensaje"
+          placeholder="Mensaje"
+          type="text"
+        ></textarea>
+        <button class="button">Enviar mensaje</button>
+      </form>
+      <div class="copyright">
+        <p>María Sofía Fregona</p>
+        <p>copyright 2022</p>
+      </div>
+    </footer>
+    <script type="module" src="../controllers/buttonsMenu.js"></script>
+    <script type="module" src="../controllers/agregarProducto.js"></script>
+  </body>
+</html>

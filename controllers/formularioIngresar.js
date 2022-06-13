@@ -3,23 +3,23 @@ import { desencriptar } from "./encriptador.js";
 import { loginServices } from "../services/loginServices.js";
 
 const listaDeUsuarios = await usuarioServicios.listaUsuarios();
-const container = document.querySelector(".mensajes_de_errores");
+const span = document.querySelector(".error");
 
 const btnIngresar = document.querySelector(".button_form");
 
 btnIngresar.addEventListener("click", () => {
   let error = "";
+  borrarError();
   const username = document.querySelector("#username").value;
   const password = document.querySelector("#password").value;
   const datos = validarUsername(username);
   if (datos.length !== 0) {
-    console.log(username);
-    console.log(password);
     desencriptar(datos[0], datos[1])
       .then((response) => {
         if (response === password) {
           loginServices.setAuthorization(datos[0]);
           window.location.href = "../index.html";
+          console.log("Funciona");
         } else {
           error = "Ha ingresado un usuario y/o contraseña incorrectos.";
           mostrarError(error);
@@ -27,7 +27,13 @@ btnIngresar.addEventListener("click", () => {
       })
       .catch((error) => console.log(error));
   } else {
-    error = "Ha ingresado un usuario y/o contraseña incorrectos.";
+    if (username === "") {
+      error = "Debe ingresar un nombre de usuario";
+    } else if (password === "") {
+      error = "Debe ingresar una contraseña";
+    } else {
+      error = "Ha ingresado un usuario y/o contraseña incorrectos.";
+    }
     mostrarError(error);
   }
 });
@@ -44,9 +50,13 @@ function validarUsername(username) {
 }
 
 function mostrarError(error) {
-  if (error !== "" && container.childElementCount === 0) {
-    const span = document.createElement("span");
+  if (error !== "") {
     span.innerHTML = error;
-    container.appendChild(span);
+    span.style.display = "inline-flex";
   }
+}
+
+function borrarError() {
+  span.innerHTML = "";
+  span.style.display = "none";
 }

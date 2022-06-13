@@ -1,16 +1,9 @@
 @media screen and (min-width:0px) {
-    form p {
-        color: #555555;
-        text-align: left;
-        font-size: 0.9rem;
-        margin-left: 5vw;
-    }
-
     .titulo {
         color: #555555;
         text-align: center;
         padding-top: 10%;
-        padding-bottom: 8%;
+        padding-bottom: 5%;
         font-size: 1.2rem;
         font-weight: 700;
         width: 100%;
@@ -18,28 +11,44 @@
 
     .formulario {
         width: 100%;
-        margin: auto;
         text-align: center;
     }
 
-    .input_form {
+    .div_registro {
         width: 90vw;
-        height: 10vw;
+        height: 12vw;
         margin: auto;
-        margin-bottom: 5vw;
+        margin-bottom: 4vw;
         margin-top: 2vw;
         max-width: 500px;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        padding-top: 2vw;
+        text-align: left;
     }
 
-    .mensajes_de_errores {
-        width: 100%;
-        padding-top: 2%;
-        padding-bottom: 3%;
-        text-align: center;
+    .div_registro p {
+        font-size: 0.8rem;
+        color: #555555;
+        text-align: left;
     }
 
-    span {
-        font-size: 0.7rem;
+    .input_registro {
+        margin-top: 1vw;
+        width: 86vw;
+        height: 8vw;
+        border: none;
+        outline: none;
+        background-color: rgba(0, 0, 0, 0);
+        padding-left: 0;
+    }
+
+    .registro_span {
+        display: none;
+        font-size: 0.8rem;
+        font-weight: 500;
+        width: 100vw;
+        margin: 1% 0 3% 0;
+        justify-content: center;
         color: #ff0000;
     }
 
@@ -48,50 +57,41 @@
         border: 1.5px solid red;
     }
 
-    .button {
+    .campos_obligatorios {
+        text-align: left;
+        padding-left: 4vw;
+        height: 8vw;
+        font-size: 14px;
+        color: #555555
+    }
+
+    .button_form {
         margin-top: 2vw;
         margin-left: 4vw;
+        height: 10vw;
     }
 }
 
 @media screen and (min-width: 480px) {
-    form p {
-        width: 80px;
-        padding-right: 10px;
-        margin-left: 5px;
-        text-align: left;
-        font-size: 0.8rem;
-    }
-
     .titulo {
         font-size: 1.3rem;
         font-weight: 700;
-        padding-top: 50px;
-        padding-bottom: 30px;
+        padding-top: 8vw;
+        padding-bottom: 2vw;
     }
 
-    .formulario {
-        display: flex;
-        flex-wrap: wrap;
-        width: 500px;
-        height: auto;
-        justify-content: flex-start;
-        margin: auto;
-        align-items: center;
+    .div_registro {
+        width: 91.5vw;
+        height: 9vw;
+        max-height: 50px;
+        margin-left: auto;
+        margin-top: 2.5vw;
+        margin-bottom: 0.5vw;
     }
 
-    .input_form {
-        max-width: 350px;
-        height: 35px;
-        margin: 5px;
-    }
-
-    .provincia {
-        width: 140px;
-    }
-
-    .codigo_postal {
-        width: 93px;
+    .input_registro {
+        width: 80vw;
+        height: 5vw;
     }
 
     .div_btn_form {
@@ -99,15 +99,57 @@
         text-align: center;
     }
 
-    .mensajes_de_errores {
-        padding-bottom: 0;
+    .registro_span {
+        font-size: 0.75rem;
+        width: 80vw;
+        margin-top: 0;
+        margin-bottom: 1.5vw;
     }
 
-    span {
-        font-size: 0.8rem;
+    .campos_obligatorios {
+        padding-top: 1vw;
+        padding-left: 0;
+        height: 4vw;
+        width: 100%;
+        text-align: center;
     }
 
-    .button {
+    .button_form {
         margin-left: 0;
+        width: 25vw;
+        height: 6vw;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .titulo {
+        font-size: 1.5rem;
+        font-weight: 600;
+        padding-top: 4vw;
+        padding-bottom: 1vw;
+    }
+
+    .div_registro {
+        padding-top: 1vw;
+        padding-left: 1vw;
+        margin-top: 1.25vw;
+        margin-bottom: 0.5vw;
+    }
+
+    .input_registro {
+        height: 2vw;
+        width: 500px;
+    }
+
+    .registro_span {
+        margin-bottom: 0;
+    }
+
+    .button_form {
+        margin-top: 0;
+        width: 20vw;
+        height: 4vw;
     }
 }

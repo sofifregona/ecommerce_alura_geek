@@ -1,28 +1,49 @@
 import { estilarPagina } from "./estilarPagina.js";
 import { loginServices } from "../services/loginServices.js";
-const button = document.querySelector(".empty_button");
+
 const menuDesplegable = document.querySelector(".menu_desplegable");
-const body = document.querySelector("body");
+const signIn = document.querySelector(".signIn");
+const logIn = document.querySelector(".logIn");
+const logOut = document.querySelector(".logOut");
+const carrito = document.querySelector(".carrito");
+const productos = document.querySelector(".productos");
 const modo = document.querySelector(".modo");
 const logout = document.querySelector(".logOut");
 estilarPagina();
 
-button.addEventListener("click", () => {
-  if (menuDesplegable.style.display == "block") {
-    menuDesplegable.style.display = "none";
+window.addEventListener("click", (event) => {
+  if (event.target.classList[0] === "empty_button") {
+    event.preventDefault();
+    if (menuDesplegable.style.display === "block") {
+      menuDesplegable.style.display = "none";
+    } else {
+      menuDesplegable.style.display = "block";
+    }
   } else {
-    menuDesplegable.style.display = "block";
+    menuDesplegable.style.display = "none";
   }
 });
 
-body.addEventListener("click", (event) => {
-  if (
-    event.srcElement.className !== "empty_button" &&
-    event.srcElement.className !== "menu_desplegable"
-  ) {
-    menuDesplegable.style.display = "none";
-  }
-});
+signIn.addEventListener(
+  "click",
+  () => (window.location.href = "../screens/registrarse.html")
+);
+logIn.addEventListener(
+  "click",
+  () => (window.location.href = "../screens/iniciarSesion.html")
+);
+logOut.addEventListener(
+  "click",
+  () => (window.location.href = "../index.html")
+);
+carrito.addEventListener(
+  "click",
+  () => (window.location.href = "../screens/carrito.html")
+);
+productos.addEventListener(
+  "click",
+  () => (window.location.href = "../screens/administrador.html")
+);
 
 let modoColor = localStorage.getItem("modoColor");
 

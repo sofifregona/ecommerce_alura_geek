@@ -33,29 +33,19 @@
           <nav class="menu_desplegable">
             <ul>
               <li>
-                <button class="signIn">
-                  <a href="registrarse.html">Registrarse</a>
-                </button>
+                <button class="signIn">Registrarse</button>
               </li>
               <li>
-                <button class="logIn">
-                  <a href="iniciarSesion.html">Iniciar sesión</a>
-                </button>
+                <button class="logIn">Iniciar Sesión</button>
               </li>
               <li>
-                <button class="logOut">
-                  <a href="/index.html">Cerrar sesión</a>
-                </button>
+                <button class="logOut">Cerrar Sesión</button>
               </li>
               <li>
-                <button class="productos">
-                  <a href="administrador.html">Productos</a>
-                </button>
+                <button class="productos">Productos</button>
               </li>
               <li>
-                <button class="carrito">
-                  <a href="carrito.html">Carrito</a>
-                </button>
+                <button class="carrito">Carrito</button>
               </li>
               <li><button class="modo"></button></li>
             </ul>
@@ -67,16 +57,17 @@
       <div class="seccion_principal">
         <h3 class="titulo">Iniciar sesión</h3>
         <form class="formulario">
-          <p>Username</p>
-          <input class="input input_form" id="username" type="text" required />
-          <p>Password</p>
-          <input
-            class="input input_form"
-            id="password"
-            type="password"
-            required
-          />
-          <div class="mensajes_de_errores"></div>
+          <div class="input input_form">
+            <p>Username</p>
+            <input class="input_login" id="username" type="text" required />
+          </div>
+          <div class="input input_form">
+            <p>Password</p>
+            <input class="input_login" id="password" type="password" required />
+          </div>
+          <div class="mensajes_de_errores">
+            <span class="error"></span>
+          </div>
         </form>
         <div class="div_btn_form">
           <button class="button button_form">Ingresar</button>

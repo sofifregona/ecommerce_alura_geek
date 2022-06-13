@@ -1,71 +1,129 @@
-const listaProductos = () => {
-  return fetch(
-    "https://ecommerce-alurageek-challenge.herokuapp.com/productos"
-  ).then((respuesta) => respuesta.json());
-};
-
-const detalleProducto = (id) => {
-  return fetch(
-    `https://ecommerce-alurageek-challenge.herokuapp.com/productos/${id}`
-  ).then((respuesta) => respuesta.json());
-};
-
-const actualizarStock = (id, nuevoStock) => {
-  return fetch(
-    `https://ecommerce-alurageek-challenge.herokuapp.com/productos/${id}`,
-    {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        stock: nuevoStock,
-      }),
-    }
-  )
-    .then((respuesta) => respuesta)
-    .catch((error) => console.log(error));
-};
-
-/*
-  const crearCliente = (nombre, email) => {
-    return fetch("http://localhost:3000/perfil", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ nombre, email, id: uuid.v4() }),
-    });
-  };
-  
-  const eliminarCliente = (id) => {
-    return fetch(`http://localhost:3000/perfil/${id}`, {
-      method: "DELETE",
-    });
-  };
-  
-  const detalleCliente = (id) => {
-    return fetch(`http://localhost:3000/perfil/${id}`).then((respuesta) =>
-      respuesta.json()
+const listaProductos = async () => {
+  try {
+    const respuesta = await fetch(
+      "https://ecommerce-alurageek-challenge.herokuapp.com/productos"
     );
-  };
-  
-  const actualizarCliente = (nombre, email, id) => {
-    return fetch(`http://localhost:3000/perfil/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ nombre, email }),
-    })
-      .then((respuesta) => respuesta)
-      .catch((error) => console.log(error));
-  };
-  */
+    return await respuesta.json();
+  } catch (error) {
+    return console.log(error);
+  }
+};
 
-// Es necesario definir el type como module en la etiqueta script de html para poder usar import/export
+const detalleProducto = async (id) => {
+  try {
+    const respuesta = await fetch(
+      `https://ecommerce-alurageek-challenge.herokuapp.com/productos/${id}`
+    );
+    return await respuesta.json();
+  } catch (error) {
+    return console.log(error);
+  }
+};
+
+const actualizarStock = async (id, stock) => {
+  try {
+    const respuesta = await fetch(
+      `https://ecommerce-alurageek-challenge.herokuapp.com/productos/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          stock,
+        }),
+      }
+    );
+    return respuesta;
+  } catch (error) {
+    return console.log(error);
+  }
+};
+
+const crearProducto = async (
+  id,
+  nombre,
+  seccion,
+  descripcion,
+  precio,
+  stock,
+  imagen
+) => {
+  try {
+    return await fetch(
+      "https://ecommerce-alurageek-challenge.herokuapp.com/productos",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id,
+          nombre,
+          seccion,
+          descripcion,
+          precio,
+          stock,
+          imagen,
+        }),
+      }
+    );
+  } catch (error) {
+    return console.log(error);
+  }
+};
+
+const actualizarProducto = async (
+  id,
+  nombre,
+  seccion,
+  descripcion,
+  precio,
+  stock,
+  imagen
+) => {
+  try {
+    const respuesta = await fetch(
+      `https://ecommerce-alurageek-challenge.herokuapp.com/productos/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nombre,
+          seccion,
+          descripcion,
+          precio,
+          stock,
+          imagen,
+        }),
+      }
+    );
+    return respuesta;
+  } catch (error) {
+    return console.log(error);
+  }
+};
+
+const eliminarProducto = async (id) => {
+  try {
+    return await fetch(
+      `https://ecommerce-challenge-heroku.herokuapp.com/productos/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
+  } catch (error) {
+    return console.log(error);
+  }
+};
+
 export const productoServices = {
   listaProductos,
   detalleProducto,
   actualizarStock,
+  crearProducto,
+  actualizarProducto,
+  eliminarProducto,
 };

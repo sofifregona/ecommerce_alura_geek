@@ -23,7 +23,7 @@ const product = await productoServices
 
 imagen.style.cssText = `background-image:url(${product.imagen});background-position:center;background-size:cover;background-repeat:no-repeat;`;
 titulo.innerHTML = product.nombre;
-precio.innerHTML = product.precio;
+precio.innerHTML = `$${product.precio}`;
 descripcion.innerHTML = product.descripcion;
 
 let nuevaCantidad = cantidad.value;
@@ -78,12 +78,12 @@ boton.addEventListener("click", () => {
           .then((resp) => {
             console.log(resp);
           });
-        productoServices.actualizarStock(productId, nuevoStock);
+        productoServices.actualizarStock(productId, nuevoStock).then(() => {
+          window.location.href = `../screens/producto.html?id=${productId}`;
+        });
       })
       .catch((error) => console.log("Ocurrió un error"))
-      .finally(() => {
-        //window.location.href = "../screens/carrito.html";
-      });
+      .finally(() => {});
   }
 });
 
@@ -124,21 +124,15 @@ productoServices
   .catch((error) => console.log("Ocurrió un error"));
 
 function desactivarBotones() {
-  menos.style.backgroundColor = "#555555";
-  mas.style.backgroundColor = "#555555";
-  boton.style.backgroundColor = "#555555";
-  menos.style.color = "#A2A2A2";
-  mas.style.color = "#A2A2A2";
-  boton.style.color = "#A2A2A2";
+  menos.style.display = "none";
+  mas.style.display = "none";
+  boton.style.display = "none";
   stock.style.color = "red";
 }
 
 function activarBotones() {
-  menos.style.backgroundColor = "#2A7AE4";
-  mas.style.backgroundColor = "#2A7AE4";
-  boton.style.backgroundColor = "#2A7AE4";
-  menos.style.color = "#FFFFFF";
-  mas.style.color = "#FFFFFF";
-  boton.style.color = "#FFFFFF";
+  menos.style.display = "inline";
+  mas.style.display = "inline";
+  boton.style.display = "inline";
   stock.style.color = "#555555";
 }
