@@ -6,7 +6,7 @@
     <title>AluraGeek</title>
     <link rel="stylesheet" href="../assets/css/reset.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/agregarProducto.css" />
+    <link rel="stylesheet" href="../assets/css/administrarProducto.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap"
       rel="stylesheet"
@@ -96,9 +96,9 @@
                 <input class="input_seccion_producto" disabled />
                 <nav class="secciones">
                   <ul class="lista_secciones">
-                    <li class="seccion">Star Wars</li>
-                    <li class="seccion">Consolas</li>
-                    <li class="seccion">Diversos</li>
+                    <li class="seccion" id="1_seccion">Star Wars</li>
+                    <li class="seccion" id="2_seccion">Consolas</li>
+                    <li class="seccion" id="3_seccion">Diversos</li>
                   </ul>
                 </nav>
               </div>
@@ -165,7 +165,14 @@
         <p>copyright 2022</p>
       </div>
     </footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"
+      integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="module" src="../controllers/estilarPagina.js"></script>
     <script type="module" src="../controllers/buttonsMenu.js"></script>
-    <script type="module" src="../controllers/agregarProducto.js"></script>
+    <script type="module" src="../controllers/administrarProducto.js"></script>
   </body>
 </html>

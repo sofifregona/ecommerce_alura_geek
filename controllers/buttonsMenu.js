@@ -1,5 +1,5 @@
-import { estilarPagina } from "./estilarPagina.js";
 import { loginServices } from "../services/loginServices.js";
+import { estilarPagina } from "./estilarPagina.js";
 
 const menuDesplegable = document.querySelector(".menu_desplegable");
 const signIn = document.querySelector(".signIn");
@@ -9,7 +9,6 @@ const carrito = document.querySelector(".carrito");
 const productos = document.querySelector(".productos");
 const modo = document.querySelector(".modo");
 const logout = document.querySelector(".logOut");
-estilarPagina();
 
 window.addEventListener("click", (event) => {
   if (event.target.classList[0] === "empty_button") {
@@ -61,3 +60,5 @@ logout.addEventListener("click", () => {
   loginServices.setAuthorization("");
   window.location.href = "../index.html";
 });
+
+estilarPagina();

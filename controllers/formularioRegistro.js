@@ -1,81 +1,95 @@
 import { usuarioServicios } from "../services/usuarioServices.js";
+import { loginServices } from "../services/loginServices.js";
 import { encriptar } from "./encriptador.js";
 
 const listaDeUsuarios = await usuarioServicios.listaUsuarios();
 const spans = document.querySelectorAll(".registro_span");
 const inputs = document.querySelectorAll(".obligatorio");
 
-inputs.forEach((input) => {
-  input.addEventListener("keyup", () => {
-    const campo = input.id;
-    const span = document.querySelector(`.${campo}`);
-    span.style.display = "none";
-    const validacion = validar(input, campo);
-    if (campo === "secondpassword" && validacion === "") {
-      const segundaValidacion = validarRepetirContraseña(input);
-      span.innerHTML = segundaValidacion;
-      span.style.display = "inline-flex";
-    } else {
-      if (validacion !== "") {
-        span.innerHTML = validacion;
+const isAuth = loginServices.getAutorizathion();
+console.log(isAuth);
+if (isAuth === "no autorizado") {
+  inputs.forEach((input) => {
+    input.addEventListener("keyup", () => {
+      const campo = input.id;
+      const span = document.querySelector(`.${campo}`);
+      span.style.display = "none";
+      const validacion = validar(input, campo);
+      if (campo === "secondpassword" && validacion === "") {
+        const segundaValidacion = validarRepetirContraseña(input);
+        span.innerHTML = segundaValidacion;
         span.style.display = "inline-flex";
-      }
-      if (validacion === "" && (campo === "username" || campo === "email")) {
-        const segundaValidacion = validarNuevoUsuario(input, campo);
-        if (segundaValidacion !== "") {
-          span.innerHTML = segundaValidacion;
+      } else {
+        if (validacion !== "") {
+          span.innerHTML = validacion;
           span.style.display = "inline-flex";
         }
+        if (validacion === "" && (campo === "username" || campo === "email")) {
+          const segundaValidacion = validarNuevoUsuario(input, campo);
+          if (segundaValidacion !== "") {
+            span.innerHTML = segundaValidacion;
+            span.style.display = "inline-flex";
+          }
+        }
       }
-    }
-  });
-});
-
-const btnRegistrar = document.querySelector(".button_form");
-
-btnRegistrar.addEventListener("click", () => {
-  let errores = 0;
-  inputs.forEach((input) => {
-    const campo = input.id;
-    const span = document.querySelector(`.${campo}`);
-    if (span.innerHTML === "") {
-      span.innerHTML = validar(input, campo);
-      span.style.display = "inline-flex";
-    }
-  });
-
-  spans.forEach((span) => {
-    if (span.style.display === "inline-flex") {
-      errores++;
-    }
-  });
-
-  if (errores === 0) {
-    const id = uuid.v4();
-    encriptar(id, password.value).then((response) => {
-      const pass = response;
-      usuarioServicios
-        .registrarUsuario(
-          id,
-          nombre.value,
-          username.value,
-          email.value,
-          pass,
-          telefono.value,
-          domicilio.value,
-          ciudad.value,
-          provincia.value,
-          cp.value,
-          pais.value
-        )
-        .then(() => {
-          window.location.href = "../index.html";
-        });
     });
-  } else {
-    window.scrollTo(0, 0);
-  }
-});
+  });
+
+  const btnRegistrar = document.querySelector(".button_form");
+
+  btnRegistrar.addEventListener("click", () => {
+    let errores = 0;
+    inputs.forEach((input) => {
+      const campo = input.id;
+      const span = document.querySelector(`.${campo}`);
+      if (span.innerHTML === "") {
+        span.innerHTML = validar(input, campo);
+        span.style.display = "inline-flex";
+      }
+    });
+
+    spans.forEach((span) => {
+      if (span.style.display === "inline-flex") {
+        errores++;
+      }
+    });
+
+    if (errores === 0) {
+      const id = uuid.v4();
+      encriptar(id, password.value).then((response) => {
+        const pass = response;
+        usuarioServicios
+          .registrarUsuario(
+            id,
+            nombre.value,
+            username.value,
+            email.value,
+            pass,
+            telefono.value,
+            domicilio.value,
+            ciudad.value,
+            provincia.value,
+            cp.value,
+            pais.value
+          )
+          .then(() => {
+            window.location.href = "../index.html";
+          });
+      });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  });
+} else {
+  const tituloInicial = document.querySelector(".titulo");
+  tituloInicial.innerHTML = "Ups... parece que no hay nada que ver aquí";
+  tituloInicial.style.fontSize = "1rem";
+  document.querySelectorAll(".div_registro").forEach((div) => {
+    div.style.display = "none";
+  });
+  document.querySelector(".campos_obligatorios").style.display = "none";
+  document.querySelector(".button_form").style.display = "none";
+}
 
 function validar(input, campo) {
   let error = "";

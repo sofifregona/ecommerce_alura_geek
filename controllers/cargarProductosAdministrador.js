@@ -15,7 +15,7 @@ if (status === "administrador") {
           <div class="producto_imagen" id="img${id}"></div>
           <p class="producto_titulo">${nombre}</p>
           <p class="precio">$${precio}</p>
-          <p class="id_producto">${id}</p>`;
+          <p class="id_producto">id: ${id.slice(0, 10)}...</p>`;
     linea.innerHTML = contenido;
     return linea;
   };
@@ -23,7 +23,8 @@ if (status === "administrador") {
   const listaProductos = await productoServices
     .listaProductos()
     .then((data) => {
-      data.forEach((producto) => {
+      for (let i = data.length - 1; i >= 0; i--) {
+        const producto = data[i];
         console.log(producto.seccion);
         const section = document.querySelector(
           `[data-seccion${producto.seccion}]`
@@ -36,11 +37,17 @@ if (status === "administrador") {
         section.appendChild(nuevaLinea);
         const img = document.querySelector(`#img${producto.id}`);
         img.style.cssText = `background-image:url(${producto.imagen});background-position:center;background-size:cover;background-repeat:no-repeat;`;
-      });
+      }
     })
     .catch((error) => console.log("Ocurrió un error"));
 } else {
-  console.log("Ups... Parece que no hay nada que ver aquí");
+  const tituloInicial = document.querySelector(".titulo");
+  tituloInicial.innerHTML = "Ups... parece que no hay nada que ver aquí";
+  tituloInicial.style.fontSize = "1rem";
+  document.querySelector(".agregar_producto").style.display = "none";
+  document
+    .querySelectorAll(".productos_titulo")
+    .forEach((titulo) => (titulo.style.display = "none"));
 }
 
 window.addEventListener("click", (event) => {
@@ -51,6 +58,10 @@ window.addEventListener("click", (event) => {
       const id = document.getElementById(nombreElemento);
       id.style.display = "none";
       productoServices.eliminarProducto(nombreElemento);
+    } else if (nombreEvento === "modificar") {
+      window.location.href = `../screens/administrarProducto.html?id=${nombreElemento}`;
     }
+  } else if (nombreEvento === "nuevo_producto") {
+    window.location.href = `../screens/administrarProducto.html`;
   }
 });

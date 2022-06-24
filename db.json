@@ -32,7 +32,7 @@
   "productos": [
     {
       "id": "ade0108f-c96c-4556-a284-240a12f2ffe6",
-      "nombre": "Producto XYZ",
+      "nombre": "A",
       "seccion": 1,
       "descripcion": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
       "precio": "60.0",
@@ -41,7 +41,7 @@
     },
     {
       "id": "ed49cb83-3028-4610-89c6-ad281a47e65a",
-      "nombre": "Producto XYZ",
+      "nombre": "B",
       "seccion": 1,
       "descripcion": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
       "precio": "60.0",
@@ -50,7 +50,7 @@
     },
     {
       "id": "79d3f342-5f39-4067-898b-06ddb9be39c0",
-      "nombre": "Producto XYZ",
+      "nombre": "C",
       "seccion": 1,
       "descripcion": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
       "precio": "60.0",

@@ -58,12 +58,11 @@ mas.addEventListener("click", () => {
 });
 
 const productId = product.id;
-const userId = loginServices.getAutorizathion();
+const userId = loginServices.getAutorizathionId();
 
 boton.addEventListener("click", () => {
   if (product.stock > 0) {
     const cantidadCompra = cantidad.value;
-    console.log(cantidadCompra);
     const nuevoStock = product.stock - cantidadCompra;
     usuarioServicios
       .detalleUsuario(userId)
@@ -82,8 +81,7 @@ boton.addEventListener("click", () => {
           window.location.href = `../screens/producto.html?id=${productId}`;
         });
       })
-      .catch((error) => console.log("Ocurrió un error"))
-      .finally(() => {});
+      .catch((error) => console.log("Ocurrió un error"));
   }
 });
 

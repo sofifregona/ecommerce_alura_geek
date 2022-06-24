@@ -20,8 +20,9 @@ const input = document.querySelectorAll(".input");
 
 export function estilarPagina() {
   const isAuth = loginServices.getAutorizathion();
+  console.log("isAuth:", isAuth);
   if (isAuth === null) loginServices.setAuthorization("");
-  if (isAuth !== "") {
+  if (isAuth !== "no autorizado") {
     signin.style.display = "none";
     login.style.display = "none";
     logout.style.display = "block";

@@ -2,7 +2,7 @@ import { usuarioServicios } from "../services/usuarioServices.js";
 import { loginServices } from "../services/loginServices.js";
 import { productoServices } from "../services/productoServices.js";
 
-const userId = loginServices.getAutorizathion();
+const userId = loginServices.getAutorizathionId();
 const lista = document.querySelector(".lista_de_carrito");
 const mensaje = document.querySelector(".mensaje");
 const boton = document.querySelector(".button_pagar");

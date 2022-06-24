@@ -109,7 +109,7 @@ const actualizarProducto = async (
 const eliminarProducto = async (id) => {
   try {
     return await fetch(
-      `https://ecommerce-challenge-heroku.herokuapp.com/productos/${id}`,
+      `https://ecommerce-alurageek-challenge.herokuapp.com/productos/${id}`,
       {
         method: "DELETE",
       }
