@@ -21,7 +21,7 @@ const input = document.querySelectorAll(".input");
 export function estilarPagina() {
   const isAuth = loginServices.getAutorizathion();
   console.log("isAuth:", isAuth);
-  if (isAuth === null) loginServices.setAuthorization("");
+  if (isAuth === "no autorizado") loginServices.setAuthorization("");
   if (isAuth !== "no autorizado") {
     signin.style.display = "none";
     login.style.display = "none";
@@ -44,27 +44,8 @@ export function estilarPagina() {
   }
 
   let modoColor = localStorage.getItem("modoColor");
-  if (modoColor === undefined) localStorage.setItem("modoColor", "claro");
-  if (modoColor === "claro") {
-    body.style.backgroundColor = "#FFFFFF";
-    menu.style.backgroundColor = "#FFFFFF";
-    logo.src = "../assets/img/Logo.svg";
-    modo.innerHTML = "Modo oscuro";
-    buscar.classList.remove("buscar_oscuro");
-    buscar.classList.add("buscar_clara");
-    inputBuscador.style.backgroundColor = "#F5F5F5";
-    copyright.style.backgroundColor = "#FFFFFF";
-    copyright.style.color = "#464646";
-    seccionPrincipal.style.backgroundColor = "#E5E5E5";
-    footer.style.backgroundColor = "#EAF2FD";
-    footerLogo.src = "../assets/img/Logo.svg";
-    footerLista.forEach((item) => {
-      item.style.color = "#555555";
-    });
-    input.forEach((item) => {
-      item.style.backgroundColor = "#FFFFFF";
-    });
-  } else {
+  if (modoColor === null) localStorage.setItem("modoColor", "claro");
+  if (modoColor === "oscuro") {
     body.style.backgroundColor = "#242424";
     menu.style.backgroundColor = "#242424";
     logo.src = "../assets/img/Logo_blanco.png";
@@ -83,6 +64,25 @@ export function estilarPagina() {
     input.forEach((item) => {
       item.style.backgroundColor = "#b3b3b3";
       item.style.color = "#464646";
+    });
+  } else {
+    body.style.backgroundColor = "#FFFFFF";
+    menu.style.backgroundColor = "#FFFFFF";
+    logo.src = "../assets/img/Logo.svg";
+    modo.innerHTML = "Modo oscuro";
+    buscar.classList.remove("buscar_oscuro");
+    buscar.classList.add("buscar_clara");
+    inputBuscador.style.backgroundColor = "#F5F5F5";
+    copyright.style.backgroundColor = "#FFFFFF";
+    copyright.style.color = "#464646";
+    seccionPrincipal.style.backgroundColor = "#E5E5E5";
+    footer.style.backgroundColor = "#EAF2FD";
+    footerLogo.src = "../assets/img/Logo.svg";
+    footerLista.forEach((item) => {
+      item.style.color = "#555555";
+    });
+    input.forEach((item) => {
+      item.style.backgroundColor = "#FFFFFF";
     });
   }
 }
