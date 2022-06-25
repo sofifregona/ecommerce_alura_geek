@@ -1,6 +1,8 @@
 import { productoServices } from "../services/productoServices.js";
 
-const crearNuevaLinea = (id, nombre, precio) => {
+const verTodoS = document.querySelectorAll(".ver_todo");
+
+export const crearNuevaLinea = (id, nombre, precio) => {
   const linea = document.createElement("div");
   linea.classList.add("producto");
   linea.id = id;
@@ -34,3 +36,10 @@ productoServices
     }
   })
   .catch((error) => console.log("Ocurrió un error"));
+
+verTodoS.forEach((verTodo) => {
+  verTodo.addEventListener("click", (event) => {
+    const nombreSeccion = event.path[3].classList[1];
+    window.location.href = `../screens/busqueda.html?id=${nombreSeccion}`;
+  });
+});

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>AluraGeek</title>
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="menu">
+        <div class="logo">
+          <a href="../index.html"
+            ><img class="logo_imagen" src="../assets/img/Logo.svg"
+          /></a>
+        </div>
+        <div class="buscador">
+          <input
+            class="input_buscador"
+            placeholder="¿Qué deseas buscar?"
+            type="search"
+          />
+          <button class="buscar initial"></button>
+        </div>
+        <div class="div_button">
+          <button class="empty_button">Menú</button>
+          <nav class="menu_desplegable">
+            <ul>
+              <li>
+                <button class="signIn">Registrarse</button>
+              </li>
+              <li>
+                <button class="logIn">Iniciar Sesión</button>
+              </li>
+              <li>
+                <button class="logOut">Cerrar Sesión</button>
+              </li>
+              <li>
+                <button class="productos">Productos</button>
+              </li>
+              <li>
+                <button class="carrito">Carrito</button>
+              </li>
+              <li><button class="modo"></button></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="seccion_principal">
+        <div class="productos_cabecera">
+          <h3 class="productos_titulo"></h3>
+          <a class="ver_todo" href="#">
+            <img class="flecha" src="../assets/img/flecha.svg" />
+            <p>Volver</p>
+          </a>
+        </div>
+        <div class="productos_contenido"></div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="lista">
+        <img class="footer_logo" src="../assets/img/Logo.svg" />
+        <ul class="footer_lista">
+          <li class="footer_lista_elemento">Quiénes somos</li>
+          <li class="footer_lista_elemento">Política de privacidad</li>
+          <li class="footer_lista_elemento">Programa de fidelidad</li>
+          <li class="footer_lista_elemento">Nuestras tiendas</li>
+          <li class="footer_lista_elemento">Quiero ser franquiciado</li>
+          <li class="footer_lista_elemento">Anuncie aquí</li>
+        </ul>
+      </div>
+      <form class="contacto">
+        <p class="contacto_titulo">Hable con nosotros</p>
+        <input class="input input_nombre" placeholder="Nombre" type="text" />
+        <textarea
+          class="input input_mensaje"
+          placeholder="Mensaje"
+          type="text"
+        ></textarea>
+        <button class="button">Enviar mensaje</button>
+      </form>
+      <div class="copyright">
+        <p>María Sofía Fregona</p>
+        <p>copyright 2022</p>
+      </div>
+    </footer>
+    <script type="module" src="../controllers/estilarPagina.js"></script>
+    <script type="module" src="../controllers/buttonsMenu.js"></script>
+    <script type="module" src="../controllers/busqueda.js"></script>
+  </body>
+</html>
