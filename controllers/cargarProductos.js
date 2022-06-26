@@ -40,6 +40,6 @@ productoServices
 verTodoS.forEach((verTodo) => {
   verTodo.addEventListener("click", (event) => {
     const nombreSeccion = event.path[3].classList[1];
-    window.location.href = `../screens/busqueda.html?id=${nombreSeccion}`;
+    window.location.href = `../screens/busqueda.html?id=seccion_${nombreSeccion}`;
   });
 });

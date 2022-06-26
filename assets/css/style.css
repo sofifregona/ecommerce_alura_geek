@@ -26,6 +26,7 @@
     .input_buscador {
         display: none;
         outline: none;
+        border: none;
     }
 
     .buscar {
@@ -204,7 +205,6 @@
     .input_buscador {
         display: flex;
         background-color: #F5F5F5;
-        border: none;
         border-radius: 20px 0 0 20px;
         width: 200px;
         height: 40px;

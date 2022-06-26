@@ -18,6 +18,8 @@ const footerLogo = document.querySelector(".footer_logo");
 const footerLista = document.querySelectorAll(".footer_lista_elemento");
 const input = document.querySelectorAll(".input");
 
+let botonBuscar = 0;
+
 export function estilarPagina() {
   const isAuth = loginServices.getAutorizathion();
   console.log("isAuth:", isAuth);
@@ -86,3 +88,23 @@ export function estilarPagina() {
     });
   }
 }
+
+buscar.addEventListener("click", () => {
+  const busqueda = inputBuscador.value.toLowerCase();
+  if (window.innerWidth < 480) {
+    if (botonBuscar === 0) {
+      botonBuscar = 1;
+      inputBuscador.style.cssText =
+        "display:block; position:absolute; top:9vh; right:0vh; width:100%; height:6vh";
+    } else {
+      botonBuscar = 0;
+      inputBuscador.style.display = "none";
+      if (busqueda !== "") {
+        window.location.href = `../screens/busqueda.html?id=${busqueda}`;
+      }
+    }
+  } else {
+    inputBuscador.style.cssText = "position:static";
+    window.location.href = `../screens/busqueda.html?id=${busqueda}`;
+  }
+});

@@ -1,6 +1,7 @@
 import { productoServices } from "../services/productoServices.js";
 import { loginServices } from "../services/loginServices.js";
 import { usuarioServicios } from "../services/usuarioServices.js";
+import { crearNuevaLinea } from "./cargarProductos.js";
 
 const href = window.location.search;
 const idProducto = href.slice(4, href.length);
@@ -85,19 +86,6 @@ boton.addEventListener("click", () => {
   }
 });
 
-const crearNuevaLinea = (id, nombre, precio) => {
-  const linea = document.createElement("div");
-  linea.classList.add("producto");
-  linea.id = id;
-  const contenido = `
-    <div class="producto_imagen" id="img${id}"></div>
-    <p class="producto_titulo">${nombre}</p>
-    <p class="precio">$${precio}</p>
-    <a class="ver_producto" href="../screens/producto.html?id=${id}">Ver producto</a>`;
-  linea.innerHTML = contenido;
-  return linea;
-};
-
 productoServices
   .listaProductos()
   .then((data) => {
@@ -108,14 +96,16 @@ productoServices
         container.childElementCount < 6 &&
         product.seccion === producto.seccion
       ) {
-        const nuevaLinea = crearNuevaLinea(
-          producto.id,
-          producto.nombre,
-          producto.precio
-        );
-        container.appendChild(nuevaLinea);
-        const img = document.querySelector(`#img${producto.id}`);
-        img.style.cssText = `background-image:url(${producto.imagen});background-position:center;background-size:cover;background-repeat:no-repeat;`;
+        if (producto.id !== idProducto) {
+          const nuevaLinea = crearNuevaLinea(
+            producto.id,
+            producto.nombre,
+            producto.precio
+          );
+          container.appendChild(nuevaLinea);
+          const img = document.querySelector(`#img${producto.id}`);
+          img.style.cssText = `background-image:url(${producto.imagen});background-position:center;background-size:cover;background-repeat:no-repeat;`;
+        }
       }
     }
   })
