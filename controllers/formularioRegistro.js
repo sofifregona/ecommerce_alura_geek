@@ -51,7 +51,6 @@ if (isAuth === "no autorizado") {
       const id = uuid.v4();
       encriptar(id, password.value).then((response) => {
         const pass = response;
-        console.log("Dentro de encriptar");
         usuarioServicios
           .registrarUsuario(
             id,
