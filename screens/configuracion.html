@@ -58,21 +58,8 @@
     </header>
     <main>
       <div class="seccion_principal">
-        <h3 class="titulo">Registro</h3>
+        <h3 class="titulo">Datos de usuario</h3>
         <form class="formulario">
-          <div class="input div_registro">
-            <p>Nombre*</p>
-            <input
-              class="input_registro obligatorio"
-              id="nombre"
-              type="text"
-              data-tipo="nombre"
-              name="nombre"
-              pattern="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]{3,}"
-              required
-            />
-          </div>
-          <span class="registro_span nombre"></span>
           <div class="input div_registro">
             <p>Nombre de usuario*</p>
             <input
@@ -99,6 +86,15 @@
             />
           </div>
           <span class="registro_span email"></span>
+          <p class="campos_obligatorios">(*) Campos obligatorios</p>
+        </form>
+        <div class="div_btn_form">
+          <button class="button button_form button_datos_usuario">
+            Actualizar datos de usuario
+          </button>
+        </div>
+        <h3 class="titulo">Contraseña</h3>
+        <form class="formulario">
           <div class="input div_registro">
             <p>Contraseña*</p>
             <input
@@ -125,10 +121,126 @@
           </div>
           <span class="registro_span secondpassword"></span>
           <p class="campos_obligatorios">(*) Campos obligatorios</p>
-          <div class="mensajes_de_errores"></div>
         </form>
         <div class="div_btn_form">
-          <button class="button button_form">Registrarse</button>
+          <button class="button button_form button_password">
+            Actualizar contraseña
+          </button>
+        </div>
+        <h3 class="titulo">Datos personales</h3>
+        <form class="formulario">
+          <div class="input div_registro">
+            <p>Nombre*</p>
+            <input
+              class="input_registro obligatorio"
+              id="nombre"
+              type="text"
+              data-tipo="nombre"
+              name="nombre"
+              pattern="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]{3,}"
+              required
+            />
+          </div>
+          <span class="registro_span nombre"></span>
+          <div class="input div_registro">
+            <p>Teléfono</p>
+            <input
+              class="input_registro"
+              id="telefono"
+              type="tel"
+              data-tipo="telefono"
+            />
+          </div>
+          <div class="input div_registro">
+            <p>Domicilio</p>
+            <input
+              class="input_registro"
+              id="domicilio"
+              type="text"
+              data-tipo="domicilio"
+            />
+          </div>
+          <div class="input div_registro">
+            <p>Ciudad</p>
+            <input
+              class="input_registro"
+              id="ciudad"
+              type="text"
+              data-tipo="ciudad"
+            />
+          </div>
+          <div class="input div_registro provincia">
+            <p>Estado o Provincia</p>
+            <input
+              class="input_registro"
+              id="provincia"
+              type="text"
+              data-tipo="provincia"
+            />
+          </div>
+          <div class="input div_registro codigo_postal">
+            <p>Código postal</p>
+            <input class="input_registro" id="cp" type="text" data-tipo="cp" />
+          </div>
+          <div class="input div_registro">
+            <p>País</p>
+            <input
+              class="input_registro"
+              id="pais"
+              type="text"
+              data-tipo="pais"
+            />
+          </div>
+          <p class="campos_obligatorios">(*) Campos obligatorios</p>
+        </form>
+        <div class="div_btn_form">
+          <button class="button button_form button_datos_personales">
+            Actualizar datos personales
+          </button>
+        </div>
+        <h3 class="titulo">Datos de pago</h3>
+        <form class="formulario">
+          <div class="input div_registro">
+            <p>Números de la tarjeta de crédito/débito*</p>
+            <input
+              class="input_registro"
+              id="tarjeta"
+              placeholder="0000 0000 0000 0000"
+              pattern="(\d{4}\s){3}\d{4}"
+            />
+          </div>
+          <span class="registro_span tarjeta"></span>
+          <div class="input div_registro">
+            <p>Nombre del titular*</p>
+            <input class="input_registro" id="titular" pattern="[a-zA-Z]{3,}" />
+          </div>
+          <span class="registro_span titular"></span>
+          <div class="input div_registro">
+            <p>Fecha de vencimiento*</p>
+            <input
+              class="input_registro"
+              id="vencimiento"
+              placeholder="00/00"
+              pattern="\d{2}/\d{2}"
+            />
+          </div>
+          <span class="registro_span vencimiento"></span>
+          <div class="input div_registro">
+            <p>CVV*</p>
+            <input
+              class="input_registro"
+              id="cvv"
+              placeholder="000"
+              pattern="\d{3,4}"
+            />
+          </div>
+          <span class="registro_span cvv"></span>
+          <p class="campos_obligatorios">(*) Campos obligatorios</p>
+        </form>
+        <div class="div_btn_form">
+          <button class="button button_form button_datos_pago">
+            Actualizar datos de pago
+          </button>
         </div>
       </div>
     </main>
@@ -168,6 +280,6 @@
     <script type="module" src="../controllers/estilarPagina.js"></script>
     <script type="module" src="../controllers/buttonsMenu.js"></script>
     <script type="module" src="../controllers/encriptador.js"></script>
-    <script type="module" src="../controllers/formularioRegistro.js"></script>
+    <script type="module" src="../controllers/configuracion.js"></script>
   </body>
 </html>

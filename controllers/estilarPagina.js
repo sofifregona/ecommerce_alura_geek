@@ -4,11 +4,6 @@ const body = document.querySelector("body");
 const menu = document.querySelector(".menu");
 const logo = document.querySelector(".logo_imagen");
 const modo = document.querySelector(".modo");
-const login = document.querySelector(".logIn");
-const logout = document.querySelector(".logOut");
-const signin = document.querySelector(".signIn");
-const productos = document.querySelector(".productos");
-const carrito = document.querySelector(".carrito");
 const buscar = document.querySelector(".buscar");
 const inputBuscador = document.querySelector(".input_buscador");
 const copyright = document.querySelector(".copyright");
@@ -21,30 +16,6 @@ const input = document.querySelectorAll(".input");
 let botonBuscar = 0;
 
 export function estilarPagina() {
-  const isAuth = loginServices.getAutorizathion();
-  console.log("isAuth:", isAuth);
-  if (isAuth === "no autorizado") loginServices.setAuthorization("");
-  if (isAuth !== "no autorizado") {
-    signin.style.display = "none";
-    login.style.display = "none";
-    logout.style.display = "block";
-    if (isAuth === "administrador") {
-      console.log("Modo administrador");
-      productos.style.display = "block";
-      carrito.style.display = "none";
-    } else {
-      console.log("Modo usuario");
-      productos.style.display = "none";
-      carrito.style.display = "block";
-    }
-  } else {
-    signin.style.display = "block";
-    login.style.display = "block";
-    logout.style.display = "none";
-    productos.style.display = "none";
-    carrito.style.display = "none";
-  }
-
   let modoColor = localStorage.getItem("modoColor");
   if (modoColor === null) localStorage.setItem("modoColor", "claro");
   if (modoColor === "oscuro") {

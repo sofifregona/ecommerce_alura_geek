@@ -20,19 +20,7 @@ const detalleUsuario = async (id) => {
   }
 };
 
-const registrarUsuario = async (
-  id,
-  nombre,
-  username,
-  email,
-  password,
-  telefono,
-  domicilio,
-  ciudad,
-  provincia,
-  cp,
-  pais
-) => {
+const registrarUsuario = async (id, nombre, username, email, password) => {
   try {
     return await fetch(
       "https://ecommerce-alurageek-challenge.herokuapp.com/users",
@@ -47,12 +35,16 @@ const registrarUsuario = async (
           username,
           email,
           password,
-          telefono,
-          domicilio,
-          ciudad,
-          provincia,
-          cp,
-          pais,
+          telefono: "",
+          domicilio: "",
+          ciudad: "",
+          provincia: "",
+          cp: "",
+          pais: "",
+          tarjeta: "",
+          titular: "",
+          vencimiento: "",
+          cvv: "",
           carrito: [],
         }),
       }
@@ -62,11 +54,30 @@ const registrarUsuario = async (
   }
 };
 
-const modificarUsuario = async (
+const modificarDatosDeUsuario = async (id, username, email) => {
+  try {
+    return await fetch(
+      `https://ecommerce-alurageek-challenge.herokuapp.com/users/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id,
+          username,
+          email,
+        }),
+      }
+    );
+  } catch (error) {
+    return console.log(error);
+  }
+};
+
+const modificarDatosPersonales = async (
   id,
   nombre,
-  username,
-  email,
   telefono,
   domicilio,
   ciudad,
@@ -76,7 +87,7 @@ const modificarUsuario = async (
 ) => {
   try {
     return await fetch(
-      "https://ecommerce-alurageek-challenge.herokuapp.com/users",
+      `https://ecommerce-alurageek-challenge.herokuapp.com/users/${id}`,
       {
         method: "PATCH",
         headers: {
@@ -85,15 +96,12 @@ const modificarUsuario = async (
         body: JSON.stringify({
           id,
           nombre,
-          username,
-          email,
           telefono,
           domicilio,
           ciudad,
           provincia,
           cp,
           pais,
-          carrito: [],
         }),
       }
     );
@@ -113,6 +121,28 @@ const modificarPassword = async (id, password) => {
         },
         body: JSON.stringify({
           password,
+        }),
+      }
+    );
+  } catch (error) {
+    return console.log(error);
+  }
+};
+
+const modificarDatosDePago = async (id, tarjeta, titular, vencimiento, cvv) => {
+  try {
+    return await fetch(
+      `https://ecommerce-alurageek-challenge.herokuapp.com/users/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          tarjeta,
+          titular,
+          vencimiento,
+          cvv,
         }),
       }
     );
@@ -157,8 +187,10 @@ export const usuarioServicios = {
   listaUsuarios,
   detalleUsuario,
   registrarUsuario,
-  modificarUsuario,
+  modificarDatosDeUsuario,
+  modificarDatosPersonales,
   modificarPassword,
+  modificarDatosDePago,
   eliminarUsuario,
   actualizarCarritoUsuario,
 };

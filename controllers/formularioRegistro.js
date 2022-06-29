@@ -17,8 +17,10 @@ if (isAuth === "no autorizado") {
       const validacion = validar(input, campo);
       if (campo === "secondpassword" && validacion === "") {
         const segundaValidacion = validarRepetirContraseña(input);
-        span.innerHTML = segundaValidacion;
-        span.style.display = "inline-flex";
+        if (segundaValidacion !== "") {
+          span.innerHTML = segundaValidacion;
+          span.style.display = "inline-flex";
+        }
       } else {
         if (validacion !== "") {
           span.innerHTML = validacion;
@@ -39,15 +41,6 @@ if (isAuth === "no autorizado") {
 
   btnRegistrar.addEventListener("click", () => {
     let errores = 0;
-    inputs.forEach((input) => {
-      const campo = input.id;
-      const span = document.querySelector(`.${campo}`);
-      if (span.innerHTML === "") {
-        span.innerHTML = validar(input, campo);
-        span.style.display = "inline-flex";
-      }
-    });
-
     spans.forEach((span) => {
       if (span.style.display === "inline-flex") {
         errores++;
@@ -58,22 +51,18 @@ if (isAuth === "no autorizado") {
       const id = uuid.v4();
       encriptar(id, password.value).then((response) => {
         const pass = response;
+        console.log("Dentro de encriptar");
         usuarioServicios
           .registrarUsuario(
             id,
-            nombre.value,
-            username.value,
-            email.value,
-            pass,
-            telefono.value,
-            domicilio.value,
-            ciudad.value,
-            provincia.value,
-            cp.value,
-            pais.value
+            document.querySelector("#nombre").value,
+            document.querySelector("#username").value,
+            document.querySelector("#email").value,
+            pass
           )
-          .then(() => {
-            window.location.href = "../index.html";
+          .then((response) => {
+            console.log(response);
+            window.location.href = "../screens/iniciarSesion.html";
           });
       });
     } else {
@@ -123,7 +112,6 @@ function validar(input, campo) {
 }
 
 function validarRepetirContraseña(secondpassword) {
-  console.log("validando segunda password");
   let error = "";
   const password = document.querySelector("#password").value;
   if (password !== secondpassword.value) {
