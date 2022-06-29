@@ -205,14 +205,22 @@
             <input
               class="input_registro"
               id="tarjeta"
+              name="tarjeta"
               placeholder="0000 0000 0000 0000"
               pattern="(\d{4}\s){3}\d{4}"
+              required
             />
           </div>
           <span class="registro_span tarjeta"></span>
           <div class="input div_registro">
             <p>Nombre del titular*</p>
-            <input class="input_registro" id="titular" pattern="[a-zA-Z]{3,}" />
+            <input
+              class="input_registro"
+              id="titular"
+              name="titular"
+              pattern="[a-zA-Z]{3,}(\s*[a-zA-Z]*)*"
+              required
+            />
           </div>
           <span class="registro_span titular"></span>
           <div class="input div_registro">
@@ -220,8 +228,10 @@
             <input
               class="input_registro"
               id="vencimiento"
+              name="vencimiento"
               placeholder="00/00"
               pattern="\d{2}/\d{2}"
+              required
             />
           </div>
           <span class="registro_span vencimiento"></span>
@@ -230,8 +240,10 @@
             <input
               class="input_registro"
               id="cvv"
+              name="cvv"
               placeholder="000"
               pattern="\d{3,4}"
+              required
             />
           </div>
           <span class="registro_span cvv"></span>

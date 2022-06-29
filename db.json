@@ -12,6 +12,10 @@
       "provincia": "Santa Fe",
       "cp": "3000",
       "pais": "Argentina",
+      "tarjeta": "",
+      "titular": "",
+      "vencimiento": "",
+      "cvv": "",
       "carrito": []
     },
     {
@@ -26,10 +30,10 @@
       "provincia": "Santa Fe",
       "cp": "3000",
       "pais": "Argentina",
-      "tarjeta": "0000 0000 0000 0000",
-      "titular": "USUARIO INVITADO",
-      "vencimiento": "00/00",
-      "cvv": "000",
+      "tarjeta": "",
+      "titular": "",
+      "vencimiento": "",
+      "cvv": "",
       "carrito": []
     }
   ],

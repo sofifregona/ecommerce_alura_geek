@@ -43,10 +43,26 @@ const usuario = await usuarioServicios.detalleUsuario(id).then((response) => {
   provincia.value = response.provincia;
   cp.value = response.cp;
   pais.value = response.pais;
-  tarjeta.value = response.tarjeta;
-  titular.value = response.titular;
-  vencimiento.value = response.vencimiento;
-  cvv.value = response.cvv;
+  if (response.tarjeta !== "") {
+    desencriptar(id, response.tarjeta).then((resp) => {
+      tarjeta.value = resp;
+    });
+  }
+  if (response.titular !== "") {
+    desencriptar(id, response.titular).then((resp) => {
+      titular.value = resp;
+    });
+  }
+  if (response.vencimiento !== "") {
+    desencriptar(id, response.vencimiento).then((resp) => {
+      vencimiento.value = resp;
+    });
+  }
+  if (response.cvv !== "") {
+    desencriptar(id, response.cvv).then((resp) => {
+      cvv.value = resp;
+    });
+  }
   return response;
 });
 
@@ -156,11 +172,62 @@ botonPassword.addEventListener("click", () => {
 });
 
 botonDatosPago.addEventListener("click", () => {
-  console.log("hicle click");
+  let errores = 0;
+  const spanTarjeta = document.querySelector(".tarjeta");
+  const spanTitular = document.querySelector(".titular");
+  const spanVencimiento = document.querySelector(".vencimiento");
+  const spanCvv = document.querySelector(".cvv");
+  spanTarjeta.style.display = "none";
+  spanTitular.style.display = "none";
+  spanVencimiento.style.display = "none";
+  spanCvv.style.display = "none";
+
+  const validacionTarjeta = validar(tarjeta, tarjeta.id);
+  if (validacionTarjeta !== "") {
+    spanTarjeta.style.display = "inline-flex";
+    errores++;
+  }
+  spanTarjeta.innerHTML = validacionTarjeta;
+
+  const validacionTitular = validar(titular, titular.id);
+  if (validacionTitular !== "") {
+    spanTitular.style.display = "inline-flex";
+    errores++;
+  }
+  spanTitular.innerHTML = validacionTitular;
+
+  const validacionVencimiento = validar(vencimiento, vencimiento.id);
+  if (validacionVencimiento !== "") {
+    spanVencimiento.style.display = "inline-flex";
+    errores++;
+  }
+  spanVencimiento.innerHTML = validacionVencimiento;
+
+  const validacionCvv = validar(cvv, cvv.id);
+  if (validacionCvv !== "") {
+    spanCvv.style.display = "inline-flex";
+    errores++;
+  }
+  spanCvv.innerHTML = validacionCvv;
+
+  if (errores === 0) {
+    usuarioServicios
+      .modificarDatosDePago(
+        id,
+        encriptar(tarjeta, id),
+        encriptar(titular, id),
+        encriptar(vencimiento, id),
+        encriptar(cvv, id)
+      )
+      .then((response) => {
+        console.log(response);
+      });
+  }
 });
 
 function validar(input, campo) {
   let error = "";
+  console.log(input);
   if (!input.validity.valid) {
     input.parentElement.classList.add("input-container--invalid");
     if (input.validity.valueMissing) {
@@ -181,6 +248,19 @@ function validar(input, campo) {
         case "password":
           error =
             "La contraseña debe contener entre 8 y 20 caracteres con al menos una letra minúscula, una mayúscula y un número. No se admiten caracteres especiales.<br>";
+          break;
+        case "tarjeta":
+          error = "Por favor haga coincidir el formato 0000 0000 0000 0000<br>";
+          break;
+        case "titular":
+          error =
+            "El nombre del titular debe contener al menos 3 letras, sin números ni caracteres especiales<br>";
+          break;
+        case "vencimiento":
+          error = "Por favor haga coincidir el formato 00/00";
+          break;
+        case "cvv":
+          error = "Por favor haga coincidir el formato 000 (o 0000)";
           break;
       }
     }
