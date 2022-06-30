@@ -10,7 +10,7 @@ export const crearNuevaLinea = (id, nombre, precio) => {
     <div class="producto_imagen" id="img${id}"></div>
     <p class="producto_titulo">${nombre}</p>
     <p class="precio">$${precio}</p>
-    <a class="ver_producto" href="../screens/producto.html?id=${id}">Ver producto</a>`;
+    <a class="ver_producto" href="producto.html?id=${id}">Ver producto</a>`;
   linea.innerHTML = contenido;
   return linea;
 };
@@ -40,6 +40,6 @@ productoServices
 verTodoS.forEach((verTodo) => {
   verTodo.addEventListener("click", (event) => {
     const nombreSeccion = event.path[3].classList[1];
-    window.location.href = `../screens/busqueda.html?id=seccion_${nombreSeccion}`;
+    window.location.href = `busqueda.html?id=seccion_${nombreSeccion}`;
   });
 });
