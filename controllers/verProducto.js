@@ -81,7 +81,7 @@ boton.addEventListener("click", () => {
               console.log(resp);
             });
           productoServices.actualizarStock(productId, nuevoStock).then(() => {
-            window.location.href = `../screens/producto.html?id=${productId}`;
+            window.location.href = `producto.html?id=${productId}`;
           });
         })
         .catch((error) => console.log("Ocurrió un error"));
