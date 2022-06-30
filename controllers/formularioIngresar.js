@@ -29,7 +29,7 @@ if (isAuth === "no autorizado") {
           console.log(response);
           if (response === password) {
             loginServices.setAuthorization(datos[0]);
-            window.location.href = "../index.html";
+            window.location.href = "index.html";
           } else {
             error = "Ha ingresado un usuario y/o contraseña incorrectos.";
             mostrarError(error);
