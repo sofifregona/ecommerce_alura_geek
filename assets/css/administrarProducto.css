@@ -42,6 +42,14 @@
         font-size: 0.7rem;
     }
 
+    .input_form {
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    .seccion_producto, .imagen_producto {
+        box-shadow: none;
+    }
+
     .nombre_producto, .precio_producto, .descripcion_producto {
         width: 91.5vw;
         margin-left: 3vw;
@@ -352,11 +360,11 @@
 
     .secciones {
         width: 20vw;
-        margin-top: -0.25vw;
+        margin-top: -0.5vw;
     }
 
     .seccion {
-        width: 21.25vw;
+        width: 18vw;
         padding-top: 1vw;
         padding-bottom: 2vw;
         height: 0.7vw;
