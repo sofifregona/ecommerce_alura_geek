@@ -60,10 +60,7 @@ logIn.addEventListener(
   "click",
   () => (window.location.href = "../screens/iniciarSesion.html")
 );
-logOut.addEventListener(
-  "click",
-  () => (window.location.href = "../index.html")
-);
+logOut.addEventListener("click", () => (window.location.href = "index.html"));
 configuracion.addEventListener("click", () => {
   const id = loginServices.getAutorizathionId();
   window.location.href = `../screens/configuracion.html?id=${id}`;
@@ -91,7 +88,7 @@ modo.addEventListener("click", () => {
 
 logout.addEventListener("click", () => {
   loginServices.setAuthorization("");
-  window.location.href = "../index.html";
+  window.location.href = "index.html";
 });
 
 estilarPagina();
