@@ -57,6 +57,18 @@
         margin-top: 3%;
     }
 
+    .div_error {
+        text-align: center;
+    }
+
+    .error {
+        color: red;
+        font-size: 1rem;
+        font-weight: 500;
+        display: none;
+
+    }
+
     .button_pagar {
         border: none;
         background-color: #2A7AE4;
@@ -70,8 +82,7 @@
         width: 40%;
         font-size: 0.9rem;
         font-weight: 600;
-        text-align: left;
-        margin-left: 2%;
+        text-align: center;
         color: #555555;
     }
 }
@@ -95,9 +106,5 @@
         width: 78%;
         margin-left: 10%;
         margin-bottom: 1.5%;
-    }
-
-    .mensaje {
-        margin-left: 11%;
     }
 }

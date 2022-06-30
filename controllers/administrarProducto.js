@@ -187,7 +187,8 @@ if (auth === "administrador") {
 } else {
   const tituloInicial = document.querySelector(".titulo");
   tituloInicial.innerHTML = "Ups... parece que no hay nada que ver aquí";
-  tituloInicial.style.fontSize = "1rem";
+  tituloInicial.style.cssText =
+    "text-align: center; padding: 5vw 3vw; font-size: 1.1rem; font-weight: 500; width: auto; margin-left:0";
   inputs.forEach((input) => {
     input.style.display = "none";
   });

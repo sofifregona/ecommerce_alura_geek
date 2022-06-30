@@ -8,7 +8,13 @@ const span = document.querySelector(".error");
 const btnIngresar = document.querySelector(".button_form");
 
 const isAuth = loginServices.getAutorizathion();
-console.log(isAuth);
+document.querySelector("#username").value = listaDeUsuarios[1].username;
+document.querySelector("#password").value = await desencriptar(
+  listaDeUsuarios[1].id,
+  listaDeUsuarios[1].password
+).then((resp) => {
+  return resp;
+});
 
 if (isAuth === "no autorizado") {
   btnIngresar.addEventListener("click", () => {
@@ -44,7 +50,8 @@ if (isAuth === "no autorizado") {
 } else {
   const tituloInicial = document.querySelector(".titulo");
   tituloInicial.innerHTML = "Ups... parece que no hay nada que ver aquí";
-  tituloInicial.style.fontSize = "1rem";
+  tituloInicial.style.cssText =
+    "text-align: center; padding: 5vw 3vw; font-size: 1.1rem; font-weight: 500; width: auto; margin-left:0";
   document.querySelectorAll(".input_form").forEach((input) => {
     input.style.display = "none";
   });

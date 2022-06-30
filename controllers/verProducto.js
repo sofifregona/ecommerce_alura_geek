@@ -6,6 +6,7 @@ import { crearNuevaLinea } from "./cargarProductos.js";
 const href = window.location.search;
 const idProducto = href.slice(4, href.length);
 
+const isAuth = loginServices.getAutorizathion();
 const imagen = document.querySelector(".imagen_producto");
 const titulo = document.querySelector(".titulo_producto");
 const precio = document.querySelector(".precio_producto");
@@ -62,27 +63,31 @@ const productId = product.id;
 const userId = loginServices.getAutorizathionId();
 
 boton.addEventListener("click", () => {
-  if (product.stock > 0) {
-    const cantidadCompra = cantidad.value;
-    const nuevoStock = product.stock - cantidadCompra;
-    usuarioServicios
-      .detalleUsuario(userId)
-      .then((response) => {
-        response.carrito.push({
-          productId,
-          cantidadCompra,
-        });
-        console.log(response.carrito);
-        usuarioServicios
-          .actualizarCarritoUsuario(userId, response.carrito)
-          .then((resp) => {
-            console.log(resp);
+  if (isAuth === "usuario") {
+    if (product.stock > 0) {
+      const cantidadCompra = cantidad.value;
+      const nuevoStock = product.stock - cantidadCompra;
+      usuarioServicios
+        .detalleUsuario(userId)
+        .then((response) => {
+          response.carrito.push({
+            productId,
+            cantidadCompra,
           });
-        productoServices.actualizarStock(productId, nuevoStock).then(() => {
-          window.location.href = `../screens/producto.html?id=${productId}`;
-        });
-      })
-      .catch((error) => console.log("Ocurrió un error"));
+          console.log(response.carrito);
+          usuarioServicios
+            .actualizarCarritoUsuario(userId, response.carrito)
+            .then((resp) => {
+              console.log(resp);
+            });
+          productoServices.actualizarStock(productId, nuevoStock).then(() => {
+            window.location.href = `../screens/producto.html?id=${productId}`;
+          });
+        })
+        .catch((error) => console.log("Ocurrió un error"));
+    }
+  } else if (isAuth === "no autorizado") {
+    window.location.href = "../screens/iniciarSesion.html";
   }
 });
 

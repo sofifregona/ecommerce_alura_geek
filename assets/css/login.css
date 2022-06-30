@@ -99,7 +99,7 @@
 
     .input_login {
         width: 80vw;
-        height: 5vw;
+        height: 4vw;
     }
 
     .div_btn_form {
@@ -131,10 +131,13 @@
         padding-left: 1vw;
         margin-top: 1.25vw;
         margin-bottom: 0.5vw;
+        height: 10vw;
     }
 
     .input_login {
+        margin-top: 0.5vw;
         max-height: 20px;
+        height: 5vw;
     }
 
     .div_btn_form {

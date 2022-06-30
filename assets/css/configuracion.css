@@ -1,0 +1,14 @@
+@media screen and (min-width:0px) {
+    .button_form {
+        width: 50vw;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .button_form {
+        width: 45vw;
+        height: 8vw;
+        max-width: 200px;
+        max-height: 40px;
+    }
+}

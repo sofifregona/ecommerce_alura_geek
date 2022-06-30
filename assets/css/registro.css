@@ -137,7 +137,8 @@
         padding-top: 1vw;
         padding-left: 1vw;
         margin-top: 1.25vw;
-        margin-bottom: 0.5vw;
+        margin-bottom: 1.5vw;
+        height: 8vw;
     }
 
     .input_registro {
@@ -153,6 +154,8 @@
     .button_form {
         margin-top: 0;
         width: 20vw;
+        max-width: 180px;
         height: 4vw;
+        max-height: 40px;
     }
 }

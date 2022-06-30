@@ -2,6 +2,13 @@ import { usuarioServicios } from "../services/usuarioServices.js";
 import { loginServices } from "../services/loginServices.js";
 import { desencriptar, encriptar } from "../controllers/encriptador.js";
 
+const listaDeUsuarios = await usuarioServicios
+  .listaUsuarios()
+  .then((response) => {
+    return response;
+  });
+
+const isAuth = loginServices.getAutorizathion();
 const id = loginServices.getAutorizathionId();
 let nombre = document.querySelector("#nombre");
 let username = document.querySelector("#username");
@@ -24,210 +31,234 @@ const botonDatosPersonales = document.querySelector(".button_datos_personales");
 const botonPassword = document.querySelector(".button_password");
 const botonDatosPago = document.querySelector(".button_datos_pago");
 
-const listaDeUsuarios = await usuarioServicios
-  .listaUsuarios()
-  .then((response) => {
+if (isAuth !== "usuario") {
+  document
+    .querySelectorAll(".div_registro")
+    .forEach((div) => (div.style.display = "none"));
+  document
+    .querySelectorAll(".campos_obligatorios")
+    .forEach((campo) => (campo.style.display = "none"));
+  document
+    .querySelectorAll(".button_form")
+    .forEach((button) => (button.style.display = "none"));
+  document.querySelectorAll(".titulo").forEach((titulo, index) => {
+    if (index !== 0) {
+      titulo.style.display = "none";
+    }
+  });
+  const titulo = document.querySelector(".titulo");
+  titulo.innerHTML = "Ups... parece que no hay nada que ver aquí";
+  titulo.style.cssText =
+    "text-align: center; padding: 5vw 3vw; font-size: 1.1rem; font-weight: 500; width: 90%; margin:0";
+} else {
+  const usuario = await usuarioServicios.detalleUsuario(id).then((response) => {
+    nombre.value = response.nombre;
+    username.value = response.username;
+    email.value = response.email;
+    desencriptar(id, response.password).then((resp) => {
+      password.value = resp;
+    });
+    telefono.value = response.telefono;
+    domicilio.value = response.domicilio;
+    ciudad.value = response.ciudad;
+    provincia.value = response.provincia;
+    cp.value = response.cp;
+    pais.value = response.pais;
+    if (response.tarjeta !== "") {
+      desencriptar(id, response.tarjeta).then((resp) => {
+        tarjeta.value = resp;
+      });
+    }
+    if (response.titular !== "") {
+      desencriptar(id, response.titular).then((resp) => {
+        titular.value = resp;
+      });
+    }
+    if (response.vencimiento !== "") {
+      desencriptar(id, response.vencimiento).then((resp) => {
+        vencimiento.value = resp;
+      });
+    }
+    if (response.cvv !== "") {
+      desencriptar(id, response.cvv).then((resp) => {
+        cvv.value = resp;
+      });
+    }
     return response;
   });
 
-const usuario = await usuarioServicios.detalleUsuario(id).then((response) => {
-  nombre.value = response.nombre;
-  username.value = response.username;
-  email.value = response.email;
-  desencriptar(id, response.password).then((resp) => {
-    password.value = resp;
-  });
-  telefono.value = response.telefono;
-  domicilio.value = response.domicilio;
-  ciudad.value = response.ciudad;
-  provincia.value = response.provincia;
-  cp.value = response.cp;
-  pais.value = response.pais;
-  if (response.tarjeta !== "") {
-    desencriptar(id, response.tarjeta).then((resp) => {
-      tarjeta.value = resp;
-    });
+  if (usuario.email === "usuario@alurageek.com") {
+    alert("La modificación de datos está desactivada en el modo invitado.");
+    botonDatosPersonales.disabled = true;
+    botonDatosUsuario.disabled = true;
+    botonPassword.disabled = true;
+    botonDatosPago.disabled = true;
   }
-  if (response.titular !== "") {
-    desencriptar(id, response.titular).then((resp) => {
-      titular.value = resp;
-    });
-  }
-  if (response.vencimiento !== "") {
-    desencriptar(id, response.vencimiento).then((resp) => {
-      vencimiento.value = resp;
-    });
-  }
-  if (response.cvv !== "") {
-    desencriptar(id, response.cvv).then((resp) => {
-      cvv.value = resp;
-    });
-  }
-  return response;
-});
 
-if (usuario.email === "usuario@alurageek.com") {
-  alert("La modificación de datos está desactivada en el modo invitado.");
-  botonDatosPersonales.disabled = true;
-  botonDatosUsuario.disabled = true;
-  botonPassword.disabled = true;
-}
+  botonDatosUsuario.addEventListener("click", () => {
+    let errores = 0;
+    const spanUsername = document.querySelector(".username");
+    const spanEmail = document.querySelector(".email");
 
-botonDatosUsuario.addEventListener("click", () => {
-  let errores = 0;
-  const spanUsername = document.querySelector(".username");
-  const spanEmail = document.querySelector(".email");
+    spanUsername.style.display = "none";
+    spanEmail.style.display = "none";
 
-  spanUsername.style.display = "none";
-  spanEmail.style.display = "none";
-
-  let validarUsername = validar(username, username.id);
-  if (validarUsername !== "") {
-    spanUsername.style.display = "inline-flex";
-    errores++;
-  } else {
-    validarUsername = validarActualizarUsuario(username, username.id);
+    let validarUsername = validar(username, username.id);
     if (validarUsername !== "") {
       spanUsername.style.display = "inline-flex";
       errores++;
+    } else {
+      validarUsername = validarActualizarUsuario(username, username.id);
+      if (validarUsername !== "") {
+        spanUsername.style.display = "inline-flex";
+        errores++;
+      }
     }
-  }
-  spanUsername.innerHTML = validarUsername;
-  let validarEmail = validar(email, email.id);
-  if (validarEmail !== "") {
-    spanEmail.style.display = "inline-flex";
-    errores++;
-  } else {
-    validarEmail = validarActualizarUsuario(email, email.id);
+    spanUsername.innerHTML = validarUsername;
+    let validarEmail = validar(email, email.id);
     if (validarEmail !== "") {
       spanEmail.style.display = "inline-flex";
       errores++;
+    } else {
+      validarEmail = validarActualizarUsuario(email, email.id);
+      if (validarEmail !== "") {
+        spanEmail.style.display = "inline-flex";
+        errores++;
+      }
     }
-  }
-  spanEmail.innerHTML = validarEmail;
-  if (errores === 0) {
-    usuarioServicios
-      .modificarDatosDeUsuario(id, username.value, email.value)
-      .then((response) => {
-        console.log(response);
+    spanEmail.innerHTML = validarEmail;
+    if (errores === 0) {
+      usuarioServicios
+        .modificarDatosDeUsuario(id, username.value, email.value)
+        .then((response) => {
+          console.log(response);
+        })
+        .finally(() => {
+          window.location.href = "../screens/configuracion.html";
+        });
+    }
+  });
+
+  botonDatosPersonales.addEventListener("click", () => {
+    let errores = 0;
+    const spanNombre = document.querySelector(".nombre");
+
+    spanNombre.style.display = "none";
+
+    let validarNombre = validar(nombre, nombre.id);
+    if (validarNombre !== "") {
+      spanNombre.style.display = "inline-flex";
+      errores++;
+    }
+
+    spanNombre.innerHTML = validarNombre;
+    if (errores === 0) {
+      usuarioServicios
+        .modificarDatosPersonales(
+          id,
+          nombre.value,
+          telefono.value,
+          domicilio.value,
+          ciudad.value,
+          provincia.value,
+          cp.value,
+          pais.value
+        )
+        .then((response) => {
+          console.log(response);
+        })
+        .finally(() => {
+          window.location.href = "../screens/configuracion.html";
+        });
+    }
+  });
+
+  botonPassword.addEventListener("click", () => {
+    let errores = 0;
+    const spanPassword = document.querySelector(".password");
+    const spanSecondPassword = document.querySelector(".secondpassword");
+    spanPassword.style.display = "none";
+    spanSecondPassword.style.display = "none";
+    const validarPassword = validar(password, password.id);
+    console.log(validarPassword);
+    console.log(spanPassword);
+    if (validarPassword !== "") {
+      spanPassword.style.display = "inline-flex";
+      errores++;
+    }
+    spanPassword.innerHTML = validarPassword;
+    const validarSecondPassword = validarRepetirContraseña(secondPassword);
+    if (validarSecondPassword !== "") {
+      spanSecondPassword.style.display = "inline-flex";
+      errores++;
+    }
+    spanSecondPassword.innerHTML = validarSecondPassword;
+    if (errores === 0) {
+      encriptar(id, password.value).then((response) => {
+        const pass = response;
+        usuarioServicios.modificarPassword(id, pass).finally(() => {
+          window.location.href = "../screens/configuracion.html";
+        });
       });
-  }
-});
+    }
+  });
 
-botonDatosPersonales.addEventListener("click", () => {
-  let errores = 0;
-  const spanNombre = document.querySelector(".nombre");
+  botonDatosPago.addEventListener("click", () => {
+    let errores = 0;
+    const spanTarjeta = document.querySelector(".tarjeta");
+    const spanTitular = document.querySelector(".titular");
+    const spanVencimiento = document.querySelector(".vencimiento");
+    const spanCvv = document.querySelector(".cvv");
+    spanTarjeta.style.display = "none";
+    spanTitular.style.display = "none";
+    spanVencimiento.style.display = "none";
+    spanCvv.style.display = "none";
 
-  spanNombre.style.display = "none";
+    const validacionTarjeta = validar(tarjeta, tarjeta.id);
+    if (validacionTarjeta !== "") {
+      spanTarjeta.style.display = "inline-flex";
+      errores++;
+    }
+    spanTarjeta.innerHTML = validacionTarjeta;
 
-  let validarNombre = validar(nombre, nombre.id);
-  if (validarNombre !== "") {
-    spanNombre.style.display = "inline-flex";
-    errores++;
-  }
+    const validacionTitular = validar(titular, titular.id);
+    if (validacionTitular !== "") {
+      spanTitular.style.display = "inline-flex";
+      errores++;
+    }
+    spanTitular.innerHTML = validacionTitular;
 
-  spanNombre.innerHTML = validarNombre;
-  if (errores === 0) {
-    usuarioServicios
-      .modificarDatosPersonales(
-        id,
-        nombre.value,
-        telefono.value,
-        domicilio.value,
-        ciudad.value,
-        provincia.value,
-        cp.value,
-        pais.value
-      )
-      .then((response) => {
-        console.log(response);
-      });
-  }
-});
+    const validacionVencimiento = validar(vencimiento, vencimiento.id);
+    if (validacionVencimiento !== "") {
+      spanVencimiento.style.display = "inline-flex";
+      errores++;
+    }
+    spanVencimiento.innerHTML = validacionVencimiento;
 
-botonPassword.addEventListener("click", () => {
-  let errores = 0;
-  const spanPassword = document.querySelector(".password");
-  const spanSecondPassword = document.querySelector(".secondpassword");
-  spanPassword.style.display = "none";
-  spanSecondPassword.style.display = "none";
-  const validarPassword = validar(password, password.id);
-  if (validarPassword !== "") {
-    spanPassword.style.display = "inline-flex";
-    errores++;
-  }
-  spanPassword.innerHTML = validarPassword;
-  const validarSecondPAssword = validarRepetirContraseña(secondPassword);
-  if (validarSecondPAssword !== "") {
-    spanSecondPassword.style.display = "inline-flex";
-    errores++;
-  }
-  spanSecondPassword.innerHTML = validarSecondPAssword;
-  if (errores === 0) {
-    encriptar(id, password.value).then((response) => {
-      const pass = response;
-      usuarioServicios.modificarPassword(id, pass);
-    });
-  }
-});
+    const validacionCvv = validar(cvv, cvv.id);
+    if (validacionCvv !== "") {
+      spanCvv.style.display = "inline-flex";
+      errores++;
+    }
+    spanCvv.innerHTML = validacionCvv;
 
-botonDatosPago.addEventListener("click", () => {
-  let errores = 0;
-  const spanTarjeta = document.querySelector(".tarjeta");
-  const spanTitular = document.querySelector(".titular");
-  const spanVencimiento = document.querySelector(".vencimiento");
-  const spanCvv = document.querySelector(".cvv");
-  spanTarjeta.style.display = "none";
-  spanTitular.style.display = "none";
-  spanVencimiento.style.display = "none";
-  spanCvv.style.display = "none";
-
-  const validacionTarjeta = validar(tarjeta, tarjeta.id);
-  if (validacionTarjeta !== "") {
-    spanTarjeta.style.display = "inline-flex";
-    errores++;
-  }
-  spanTarjeta.innerHTML = validacionTarjeta;
-
-  const validacionTitular = validar(titular, titular.id);
-  if (validacionTitular !== "") {
-    spanTitular.style.display = "inline-flex";
-    errores++;
-  }
-  spanTitular.innerHTML = validacionTitular;
-
-  const validacionVencimiento = validar(vencimiento, vencimiento.id);
-  if (validacionVencimiento !== "") {
-    spanVencimiento.style.display = "inline-flex";
-    errores++;
-  }
-  spanVencimiento.innerHTML = validacionVencimiento;
-
-  const validacionCvv = validar(cvv, cvv.id);
-  if (validacionCvv !== "") {
-    spanCvv.style.display = "inline-flex";
-    errores++;
-  }
-  spanCvv.innerHTML = validacionCvv;
-
-  if (errores === 0) {
-    encriptar(id, tarjeta.value).then((tarjeta) => {
-      encriptar(id, titular.value.toUpperCase()).then((titular) => {
-        encriptar(id, vencimiento.value).then((vencimiento) => {
-          encriptar(id, cvv.value).then((cvv) => {
-            usuarioServicios.modificarDatosDePago(
-              id,
-              tarjeta,
-              titular,
-              vencimiento,
-              cvv
-            );
+    if (errores === 0) {
+      encriptar(id, tarjeta.value).then((tarjeta) => {
+        encriptar(id, titular.value.toUpperCase()).then((titular) => {
+          encriptar(id, vencimiento.value).then((vencimiento) => {
+            encriptar(id, cvv.value).then((cvv) => {
+              usuarioServicios
+                .modificarDatosDePago(id, tarjeta, titular, vencimiento, cvv)
+                .finally(() => {
+                  window.location.href = "../screens/configuracion.html";
+                });
+            });
           });
         });
       });
-    });
-  }
-});
+    }
+  });
+}
 
 function validar(input, campo) {
   let error = "";
