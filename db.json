@@ -108,7 +108,7 @@
       "descripcion": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam",
       "precio": 60.0,
       "stock": 10,
-      "imagen": "../assets/img/StarWars/sw_producto1.jpg"
+      "imagen": "assets/img/StarWars/sw_producto1.jpg"
     },
     {
       "id": "900a2068-9838-4f2b-a81f-10bc24c05b13",
