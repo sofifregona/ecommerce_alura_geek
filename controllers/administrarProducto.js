@@ -157,15 +157,19 @@ if (auth === "administrador") {
     });
     if (errores === false) {
       if (idProducto !== "") {
-        productoServices.actualizarProducto(
-          idProducto,
-          campos[1],
-          campos[2],
-          campos[5],
-          campos[4],
-          campos[3],
-          campos[0]
-        );
+        productoServices
+          .actualizarProducto(
+            idProducto,
+            campos[1],
+            campos[2],
+            campos[5],
+            campos[4],
+            campos[3],
+            campos[0]
+          )
+          .finally(() => {
+            window.location.href = "administrador.html";
+          });
       } else {
         const idNuevoProducto = uuid.v4();
         productoServices
@@ -178,8 +182,8 @@ if (auth === "administrador") {
             campos[3],
             campos[0]
           )
-          .then((response) => {
-            console.log(response);
+          .finally(() => {
+            window.location.href = "administrador.html";
           });
       }
     }
