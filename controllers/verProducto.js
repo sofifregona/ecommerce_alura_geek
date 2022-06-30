@@ -109,7 +109,7 @@ productoServices
           );
           container.appendChild(nuevaLinea);
           const img = document.querySelector(`#img${producto.id}`);
-          img.style.cssText = `background-image:url(${producto.imagen});background-position:center;background-size:cover;background-repeat:no-repeat;`;
+          img.style.cssText = `background-image:url(../${producto.imagen});background-position:center;background-size:cover;background-repeat:no-repeat;`;
         }
       }
     }
