@@ -23,7 +23,7 @@ const product = await productoServices
     return response;
   });
 
-imagen.style.cssText = `background-image:url(../${product.imagen});background-position:center;background-size:cover;background-repeat:no-repeat;`;
+imagen.style.cssText = `background-image:url(${product.imagen});background-position:center;background-size:cover;background-repeat:no-repeat;`;
 titulo.innerHTML = product.nombre;
 precio.innerHTML = `$${product.precio}`;
 descripcion.innerHTML = product.descripcion;
@@ -109,7 +109,7 @@ productoServices
           );
           container.appendChild(nuevaLinea);
           const img = document.querySelector(`#img${producto.id}`);
-          img.style.cssText = `background-image:url(../${producto.imagen});background-position:center;background-size:cover;background-repeat:no-repeat;`;
+          img.style.cssText = `background-image:url(${producto.imagen});background-position:center;background-size:cover;background-repeat:no-repeat;`;
         }
       }
     }
