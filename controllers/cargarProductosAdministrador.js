@@ -54,7 +54,7 @@ if (status === "administrador") {
 window.addEventListener("click", (event) => {
   const nombreEvento = event.target.name;
   if (nombreEvento === "eliminar" || nombreEvento === "modificar") {
-    const nombreElemento = event.path[2].id;
+    const nombreElemento = event.composedPath()[2].id;
     if (nombreEvento === "eliminar") {
       const id = document.getElementById(nombreElemento);
       id.style.display = "none";
