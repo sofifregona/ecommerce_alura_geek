@@ -200,7 +200,7 @@ export const productoServices = {
   actualizarStock,
   crearProducto,
   actualizarProducto,
-  eliminarPr
+  eliminarProducto,
 };
 
 /*
