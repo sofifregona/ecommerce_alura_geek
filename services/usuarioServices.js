@@ -1,6 +1,31 @@
 const listaUsuarios = async () => {
   try {
     const respuesta = await fetch(
+      "https://sofifregona.github.io/ecommerce_alura_geek/db.json"
+    );
+    const data = await respuesta.json();
+    return data.users
+  } catch (error) {
+    return console.log(error);
+  }
+};
+
+const detalleUsuario = async (id) => {
+  try {
+    const respuesta = await fetch(
+      `https://sofifregona.github.io/ecommerce_alura_geek/db.json`
+    );
+    const data = await respuesta.json();
+    const userEncontrado = data.users.find(users => users.id === id);
+    return userEncontrado;
+  } catch (error) {
+    return console.log(error);
+  }
+};
+
+/*const listaUsuarios = async () => {
+  try {
+    const respuesta = await fetch(
       "https://ecommerce-alurageek-challenge.herokuapp.com/users"
     );
     return await respuesta.json();
@@ -18,7 +43,7 @@ const detalleUsuario = async (id) => {
   } catch (error) {
     return console.log(error);
   }
-};
+};*/
 
 const registrarUsuario = async (id, nombre, username, email, password) => {
   try {
